@@ -213,3 +213,7 @@
     --color-onSurfaceDisabled-base: var(--color-onSurfaceDisabled-light);
     --color-backdrop-base: var(--color-backdrop-light);
 }
+
+.main-scrollbar {
+    @apply scrollbar-thin scrollbar-thumb-onSurface/20 scrollbar-track-surface;
+}
