@@ -3,25 +3,30 @@ import Container from '../Container'
 
 interface SectionProps {
     children?: React.ReactNode
+    id?: string
     className?: string
+    contentClassName?: string
 }
 
 export default function Section({
     children,
+    id,
     className,
+    contentClassName
 }: SectionProps) {
 
     return(
 
         <>
             <section
+                id={id}
                 className={clsx(
                     'w-full',
                     'not-last-of-type:mb-4',
                     className
                 )}
             >
-                <Container>
+                <Container className={contentClassName}>
                     {children}
                 </Container>
             </section>

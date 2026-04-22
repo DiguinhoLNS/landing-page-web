@@ -36,6 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <body className={clsx('flex flex-1 flex-col w-full h-full')}>
                     <ThemeProvider
                         attribute='data-theme'
+                        defaultTheme='dark'
                         disableTransitionOnChange
                     >
                         <AppClientProvider>

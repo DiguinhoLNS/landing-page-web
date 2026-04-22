@@ -217,3 +217,15 @@
 .main-scrollbar {
     @apply scrollbar-thin scrollbar-thumb-onSurface/20 scrollbar-track-surface;
 }
+
+.default-click-animation {
+    @apply cursor-pointer transition-all hover:scale-98 active:scale-95;
+}
+ 
+.glass-card {
+    @apply backdrop-blur-md shadow-[inset_0_0_14px_0_rgba(255,255,255,0.20)];
+}
+
+.image-rodrigo {
+    background-image: url('/images/rodrigo.jpeg');
+}
