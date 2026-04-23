@@ -3,7 +3,7 @@ const contributions = [
         title: 'Alta Soluções',
         description: 'Desenvolvimento de sistemas e aplicações.',
         company: 'no mesmo',
-        backgroundColor: 'bg-[#0A55CF]',
+        backgroundColor: 'bg-company-alta',
     },
     {
         title: 'Maglog',
@@ -38,14 +38,14 @@ const contributions = [
     {
         title: 'Legião Tricolor',
         description: 'confidencial',
-        company: 'freelancer',
+        company: 'freelance',
         backgroundColor: 'bg-[#EC252D]',
     },
     {
         title: 'Hardwork Medicina',
         description: 'Plataformas de ensino e aprendizagem para residentes e revalidantes.',
         company: 'no mesmo',
-        backgroundColor: 'bg-[#0D0D0D]',
+        backgroundColor: 'bg-company-hwm',
     },
 ]
 

@@ -10,7 +10,7 @@ export default function HomeHero() {
             <Section
                 id='home-hero-section'
                 className={clsx('min-h-[calc(100svh-56px)]')}
-                contentClassName={clsx('flex h-full py-10')}
+                contentClassName={clsx('flex h-full')}
             >
                 <div
                     className={clsx(

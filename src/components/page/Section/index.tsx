@@ -21,8 +21,7 @@ export default function Section({
             <section
                 id={id}
                 className={clsx(
-                    'w-full',
-                    'not-last-of-type:mb-4',
+                    'w-full py-10',
                     className
                 )}
             >

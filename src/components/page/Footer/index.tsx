@@ -21,7 +21,7 @@ export default function Footer() {
 
                     
                     <p className={clsx('text-onSurfaceVariant text-xs text-center')}>
-                        © {new Date().getFullYear()} rodrigo.dev
+                        © {new Date().getFullYear()} todos os direitos reservados
                     </p>
                 </Container>
             </footer>

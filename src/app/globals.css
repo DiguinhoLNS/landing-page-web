@@ -89,6 +89,9 @@
 }
 
 @theme inline {
+    --color-company-alta: #0A55CF;
+    --color-company-hwm: #0D0D0D;
+
     --color-primary: var(--color-primary-base);
     --color-onPrimary: var(--color-onPrimary-base);
     --color-primaryContainer: var(--color-primaryContainer-base);
