@@ -9,7 +9,7 @@ export default function Button(props: ButtonProps) {
         return(
             <Link
                 href={props.href}
-                className={clsx('rounded-full')}
+                className={clsx('w-full rounded-full')}
             >
                 <BaseButton {...props} />
             </Link>

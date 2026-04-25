@@ -9,7 +9,7 @@ export default function HomeProjects() {
     return(
 
         <>
-            <Section>
+            <Section id='home-projects-section'>
                 <SectionTitle
                     label='Projetos'
                     title='O Que Construí'

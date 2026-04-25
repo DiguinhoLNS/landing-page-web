@@ -6,7 +6,7 @@ export default function HomeContact() {
     return(
 
         <>
-            <Section>
+            <Section id='home-contact-section'>
                 <SectionTitle
                     label='Contato'
                     title='Vamos Conversar'

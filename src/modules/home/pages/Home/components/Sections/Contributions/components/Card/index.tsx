@@ -15,7 +15,7 @@ export default function ContributionCard({
         <>
             <div
                 className={clsx(
-                    'flex flex-col items-start gap-1 p-6',
+                    'flex flex-col items-start gap-1 p-6 pb-2',
                     backgroundColor
                 )}
             >
