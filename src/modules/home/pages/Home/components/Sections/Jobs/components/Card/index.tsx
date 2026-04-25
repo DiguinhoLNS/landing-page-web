@@ -1,29 +1,26 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import Icon from '@/components/common/Icon'
+import type { IJob } from '@/modules/home/interfaces/IJob'
 
 const styles = {
     alta: {
         iconName: 'home_work',
-        background: 'bg-company-alta/60',
+        background: 'bg-company-alta/10',
         border: 'border-company-alta',
-        iconBox: 'bg-company-alta/90',
+        iconBox: 'bg-company-alta/20',
+        textColor: 'text-company-alta',
     },
     hwm: {
-        iconName: 'domain',
-        background: 'bg-company-hwm/60',
+        iconName: 'school',
+        background: 'bg-company-hwm/10',
         border: 'border-company-hwm',
-        iconBox: 'bg-company-hwm/90',
+        iconBox: 'bg-company-hwm/20',
+        textColor: 'text-company-hwm',
     }
 }
 
-interface JobCardProps {
-    type: string
-    link: string
-    title: string
-    position: string
-    period: string
-}
+type JobCardProps = IJob
 
 export default function JobCard({
     type,
@@ -42,7 +39,8 @@ export default function JobCard({
                 href={link}
                 target='_blank'
                 className={clsx(
-                    'flex flex-col gap-2 w-full border rounded-lg p-4 default-click-animation',
+                    'group',
+                    'flex flex-col gap-2 w-full border rounded-lg p-6 default-click-animation',
                     style.background,
                     style.border
                 )}
@@ -53,28 +51,29 @@ export default function JobCard({
                             <Icon
                                 iconName={style.iconName}
                                 iconSize={20}
-                                iconColor={clsx('text-white')}
+                                iconColor={clsx(style.textColor)}
                             />
                         </div>
 
-                        <p className={clsx('font-medium text-white text-xl')}>
+                        <p className={clsx('font-medium text-xl', style.textColor)}>
                             {title}
                         </p>
                     </div>
                     
                     <Icon
-                        iconName='link_2'
-                        iconSize={14}
-                        iconColor={clsx('text-white/60')}
+                        iconName='call_made'
+                        iconSize={20}
+                        iconColor={clsx(style.textColor)}
+                        className={clsx('group-hover:translate-x-1 group-hover:-translate-y-1')}
                     />
                 </div>
 
                 <div className={clsx('flex flex-col')}>
-                    <p className={clsx('text-white/90')}>
+                    <p className={clsx('text-onSurface/90')}>
                         {position}
                     </p>
 
-                    <p className={clsx('text-white/70')}>
+                    <p className={clsx('text-onSurface/70')}>
                         {period}
                     </p>
                 </div>

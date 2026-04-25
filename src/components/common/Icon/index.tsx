@@ -6,7 +6,8 @@ export default function Icon({
     iconName,
     iconColor,
     iconVariant = 'rounded',
-    iconSize = 24
+    iconSize = 24,
+    className
 }: IconProps) {
 
     return(
@@ -15,7 +16,9 @@ export default function Icon({
             <span
                 className={clsx(
                     `material-symbols-${iconVariant}`,
-                    iconColor
+                    'transition-all',
+                    iconColor,
+                    className
                 )}
                 style={{
                     fontSize: iconSize

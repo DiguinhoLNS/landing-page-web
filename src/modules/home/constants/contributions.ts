@@ -45,7 +45,7 @@ const contributions = [
         title: 'Hardwork Medicina',
         description: 'Plataformas de ensino e aprendizagem para residentes e revalidantes.',
         company: 'no mesmo',
-        backgroundColor: 'bg-company-hwm',
+        backgroundColor: 'bg-[#0D0D0D]',
     },
 ]
 

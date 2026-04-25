@@ -90,7 +90,7 @@
 
 @theme inline {
     --color-company-alta: #0A55CF;
-    --color-company-hwm: #0D0D0D;
+    --color-company-hwm: #09D785;
 
     --color-primary: var(--color-primary-base);
     --color-onPrimary: var(--color-onPrimary-base);
@@ -222,7 +222,7 @@
 }
 
 .default-click-animation {
-    @apply cursor-pointer transition-all hover:scale-98 active:scale-95;
+    @apply cursor-pointer transition-all;
 }
  
 .glass-card {
