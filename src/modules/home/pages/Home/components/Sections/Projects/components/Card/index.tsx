@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import Link from 'next/link'
+import Chip from '@/components/common/Chip'
 import Icon from '@/components/common/Icon'
 import type { IProject } from '@/modules/home/interfaces/IProject'
 
@@ -11,8 +12,12 @@ export default function ProjectCard({
     repository,
     title,
     description,
+    status,
     tags
 }: ProjectCardProps) {
+
+    const statusLabel = status === 'concluded' ? 'Finalizado' : 'Em desenvolvimento'
+    const statusVariant = status === 'concluded' ? 'success' : 'warning'
 
     return(
 
@@ -26,12 +31,21 @@ export default function ProjectCard({
                     'md:flex-row'
                 )}
             >
-                <div className={clsx('shrink-0')}>
+                <div className={clsx('flex shrink-0 justify-between')}>
                     <div className={clsx('flex items-center justify-center size-14 rounded-lg bg-primary/20')}>
                         <Icon
                             iconName={icon}
                             iconSize={24}
                             iconColor={clsx('text-primary')}
+                        />
+                    </div>
+
+                    <div className={clsx('block md:hidden')}>
+                        <Icon
+                            iconName='call_made'
+                            iconSize={24}
+                            iconColor={clsx('text-onSurfaceVariant')}
+                            className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1' )}
                         />
                     </div>
                 </div>      
@@ -49,12 +63,14 @@ export default function ProjectCard({
                                 {title}
                             </h3>
 
-                            <Icon
-                                iconName='call_made'
-                                iconSize={24}
-                                iconColor={clsx('text-onSurfaceVariant')}
-                                className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1')}
-                            />
+                            <div className={clsx('hidden md:block')}>
+                                <Icon
+                                    iconName='call_made'
+                                    iconSize={24}
+                                    iconColor={clsx('text-onSurfaceVariant')}
+                                    className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1')}
+                                />
+                            </div>
                         </div>
 
                         <p className={clsx('text-onSurfaceVariant text-base')}>
@@ -63,15 +79,18 @@ export default function ProjectCard({
                     </div>
 
                     <div className={clsx('flex gap-2 flex-wrap w-full')}>
+                        {!!status && (
+                            <Chip
+                                label={statusLabel}
+                                variant={statusVariant}
+                            />
+                        )}
+
                         {tags.map((item, index) => (
-                            <div
+                            <Chip
                                 key={index}
-                                className={clsx('flex items-center h-6 px-3 rounded-full bg-surfaceVariant')}
-                            >
-                                <p className={clsx('text-onSurfaceVariant text-xs')}>
-                                    {item}
-                                </p>
-                            </div>
+                                label={item}
+                            />
                         ))}
                     </div>
                 </div>       
