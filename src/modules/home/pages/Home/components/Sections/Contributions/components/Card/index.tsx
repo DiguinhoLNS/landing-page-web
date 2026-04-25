@@ -23,7 +23,7 @@ export default function ContributionCard({
                     backgroundColor
                 )}
             >
-                <p className={clsx('font-medium text-white text-xl text-center')}>
+                <p className={clsx('font-medium text-white text-xl')}>
                     {title}
                 </p>
 

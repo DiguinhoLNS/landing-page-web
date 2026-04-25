@@ -11,7 +11,7 @@ export default function HomeContributions() {
         <>
             <Section>
                 <SectionTitle
-                    label='Projetos'
+                    label='Contribuições'
                     title='Onde meu trabalho pode ser visto'
                 />
 
