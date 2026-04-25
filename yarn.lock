@@ -3560,7 +3560,7 @@ __metadata:
     formik: "npm:^2.4.9"
     framer-motion: "npm:^12.38.0"
     husky: "npm:^9.1.7"
-    material-symbols: "npm:^0.44.3"
+    material-symbols: "npm:^0.44.4"
     moment: "npm:^2.30.1"
     next: "npm:16.2.4"
     react: "npm:19.2.4"
@@ -3829,10 +3829,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"material-symbols@npm:^0.44.3":
-  version: 0.44.3
-  resolution: "material-symbols@npm:0.44.3"
-  checksum: 10c0/2c9cd5ba259b9539cc8703557183a2d13fffb2285e97a9104476646f1b439922c84d5993249ed31dfc13c30ace52224f07dff03dc65004ed1fa94e0928c7e863
+"material-symbols@npm:^0.44.4":
+  version: 0.44.4
+  resolution: "material-symbols@npm:0.44.4"
+  checksum: 10c0/fcceaee42b17cfd66a3868d34d9ff54ff79fe115e324e6580f325225297f4592b279d5ce23b57229ffb4fe7c49ea0e8294a6b9d5d570f66417db66e7312c8446
   languageName: node
   linkType: hard
 

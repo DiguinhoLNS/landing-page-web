@@ -32,7 +32,7 @@ export default function ProjectCard({
                 )}
             >
                 <div className={clsx('flex shrink-0 justify-between')}>
-                    <div className={clsx('flex items-center justify-center size-14 rounded-lg bg-primary/20')}>
+                    <div className={clsx('flex items-center justify-center size-14 rounded-lg bg-primary/10')}>
                         <Icon
                             iconName={icon}
                             iconSize={24}

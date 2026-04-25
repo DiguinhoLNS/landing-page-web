@@ -27,7 +27,7 @@ export default function HomeHero() {
                                 Olá, eu sou o
                             </p>
 
-                            <h1 className={clsx('font-extrabold text-onSurface text-8xl')}>
+                            <h1 className={clsx('font-extrabold text-onSurface text-6xl', 'sm:text-8xl')}>
                                 Rodr<span className={clsx('text-primary')}>igo</span>
                             </h1>
                         </div>
