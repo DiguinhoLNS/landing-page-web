@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@bprogress/next": "^3.2.12",
+    "@microsoft/clarity": "^1.0.2",
     "@wrksz/themes": "^0.8.3",
     "clsx": "^2.1.1",
     "formik": "^2.4.9",
