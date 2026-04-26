@@ -1,13 +1,13 @@
 import clsx from 'clsx'
 import Clarity from '@microsoft/clarity'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@wrksz/themes/next'
 import { Google_Sans, Roboto } from 'next/font/google'
 import AppClientProvider from '@/components/app/ClientProvider'
 import 'material-symbols'
 import './globals.css'
 
-const projectId = process.env.NEXT_PUBLIC_RESEND_PROJECT_ID
+const projectId = process.env.NEXT_PUBLIC_CLARITY_ID
 
 const roboto = Roboto({
     weight: ['400', '500', '600', '700'],
