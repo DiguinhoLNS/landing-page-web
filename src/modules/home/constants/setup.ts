@@ -11,11 +11,6 @@ const commonItems: ISetupItem[] = [
         label: 'Cadeira',
         text: 'Sensetup Cosy T03'
     },
-    {
-        icon: 'camera_video',
-        label: 'webcam',
-        text: 'Logitech C920s'
-    },
 ]
 
 const setup: Record<'game' | 'work', ISetupItem[]> = {
@@ -51,7 +46,7 @@ const setup: Record<'game' | 'work', ISetupItem[]> = {
         {
             icon: 'hard_drive_2',
             label: 'Outros',
-            text: 'RTX 2060, 32GB RAM, 2TB SSD'
+            text: 'RTX 2060, 32GB Ram, 2TB SSD'
         },
         {
             icon: 'mouse',
@@ -67,6 +62,11 @@ const setup: Record<'game' | 'work', ISetupItem[]> = {
             icon: 'headset',
             label: 'Headset',
             text: 'Corsair Virtuoso RGB Wireless'
+        },
+        {
+            icon: 'camera_video',
+            label: 'webcam',
+            text: 'Logitech C920s'
         },
         ...commonItems
     ]
