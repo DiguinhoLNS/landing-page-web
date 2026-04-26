@@ -1,4 +1,7 @@
+'use client'
+
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import Container from '../Container'
 
 interface SectionProps {
@@ -18,17 +21,21 @@ export default function Section({
     return(
 
         <>
-            <section
+            <motion.section
                 id={id}
                 className={clsx(
                     'w-full py-10',
                     className
                 )}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
             >
                 <Container className={contentClassName}>
                     {children}
                 </Container>
-            </section>
+            </motion.section>
         </>
 
     )
