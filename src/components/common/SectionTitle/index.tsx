@@ -14,11 +14,11 @@ export default function SectionTitle({
 
         <>
             <div className={clsx('flex flex-col mb-10')}>
-                <p className={clsx('text-primary text-lg')}>
+                <p className={clsx('text-primary text-base', 'md:text-lg')}>
                     {label}
                 </p>
 
-                <h2 className={clsx('font-bold text-onSurface text-4xl')}>
+                <h2 className={clsx('font-bold text-onSurface text-3xl', 'md:text-4xl')}>
                     {title}
                 </h2>
             </div>

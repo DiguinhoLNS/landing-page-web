@@ -25,6 +25,14 @@
     --color-onError-light: rgb(255, 255, 255);
     --color-errorContainer-light: rgb(255, 218, 214);
     --color-onErrorContainer-light: rgb(65, 0, 2);
+    --color-success-light: rgb(16, 109, 32);
+    --color-onSuccess-light: rgb(255, 255, 255);
+    --color-successContainer-light: rgb(157, 248, 152);
+    --color-onSuccessContainer-light: rgb(0, 34, 4);
+    --color-warning-light: rgb(121, 89, 0);
+    --color-onWarning-light: rgb(255, 255, 255);
+    --color-warningContainer-light: rgb(255, 223, 160);
+    --color-onWarningContainer-light: rgb(38, 26, 0);
     --color-background-light: rgb(252, 253, 246);
     --color-onBackground-light: rgb(26, 28, 25);
     --color-surface-light: rgb(252, 253, 246);
@@ -64,6 +72,14 @@
     --color-onError-dark: rgb(105, 0, 5);
     --color-errorContainer-dark: rgb(147, 0, 10);
     --color-onErrorContainer-dark: rgb(255, 180, 171);
+    --color-success-dark: rgb(130, 219, 126);
+    --color-onSuccess-dark: rgb(0, 57, 10);
+    --color-successContainer-dark: rgb(0, 83, 18);
+    --color-onSuccessContainer-dark: rgb(157, 248, 152);
+    --color-warning-dark: rgb(248, 189, 42);
+    --color-onWarning-dark: rgb(64, 45, 0);
+    --color-warningContainer-dark: rgb(92, 67, 0);
+    --color-onWarningContainer-dark: rgb(255, 223, 160);
     --color-background-dark: rgb(26, 28, 25);
     --color-onBackground-dark: rgb(226, 227, 221);
     --color-surface-dark: rgb(26, 28, 25);
@@ -90,7 +106,7 @@
 
 @theme inline {
     --color-company-alta: #0A55CF;
-    --color-company-hwm: #0D0D0D;
+    --color-company-hwm: #09D785;
 
     --color-primary: var(--color-primary-base);
     --color-onPrimary: var(--color-onPrimary-base);
@@ -108,6 +124,14 @@
     --color-onError: var(--color-onError-base);
     --color-errorContainer: var(--color-errorContainer-base);
     --color-onErrorContainer: var(--color-onErrorContainer-base);
+    --color-success: var(--color-success-base);
+    --color-onSuccess: var(--color-onSuccess-base);
+    --color-successContainer: var(--color-successContainer-base);
+    --color-onSuccessContainer: var(--color-onSuccessContainer-base);
+    --color-warning: var(--color-warning-base);
+    --color-onWarning: var(--color-onWarning-base);
+    --color-warningContainer: var(--color-warningContainer-base);
+    --color-onWarningContainer: var(--color-onWarningContainer-base);
     --color-background: var(--color-background-base);
     --color-onBackground: var(--color-onBackground-base);
     --color-surface: var(--color-surface-base);
@@ -152,6 +176,14 @@
     --color-onError-base: var(--color-onError-dark);
     --color-errorContainer-base: var(--color-errorContainer-dark);
     --color-onErrorContainer-base: var(--color-onErrorContainer-dark);
+    --color-success-base: var(--color-success-dark);
+    --color-onSuccess-base: var(--color-onSuccess-dark);
+    --color-successContainer-base: var(--color-successContainer-dark);
+    --color-onSuccessContainer-base: var(--color-onSuccessContainer-dark);
+    --color-warning-base: var(--color-warning-dark);
+    --color-onWarning-base: var(--color-onWarning-dark);
+    --color-warningContainer-base: var(--color-warningContainer-dark);
+    --color-onWarningContainer-base: var(--color-onWarningContainer-dark);
     --color-background-base: var(--color-background-dark);
     --color-onBackground-base: var(--color-onBackground-dark);
     --color-surface-base: var(--color-surface-dark);
@@ -193,6 +225,14 @@
     --color-onError-base: var(--color-onError-light);
     --color-errorContainer-base: var(--color-errorContainer-light);
     --color-onErrorContainer-base: var(--color-onErrorContainer-light);
+    --color-success-base: var(--color-success-light);
+    --color-onSuccess-base: var(--color-onSuccess-light);
+    --color-successContainer-base: var(--color-successContainer-light);
+    --color-onSuccessContainer-base: var(--color-onSuccessContainer-light);
+    --color-warning-base: var(--color-warning-light);
+    --color-onWarning-base: var(--color-onWarning-light);
+    --color-warningContainer-base: var(--color-warningContainer-light);
+    --color-onWarningContainer-base: var(--color-onWarningContainer-light);
     --color-background-base: var(--color-background-light);
     --color-onBackground-base: var(--color-onBackground-light);
     --color-surface-base: var(--color-surface-light);
@@ -222,7 +262,7 @@
 }
 
 .default-click-animation {
-    @apply cursor-pointer transition-all hover:scale-98 active:scale-95;
+    @apply cursor-pointer transition-all;
 }
  
 .glass-card {

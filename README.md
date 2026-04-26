@@ -39,6 +39,17 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o 
 
 O site atualiza automaticamente conforme você edita os arquivos.
 
+### Variáveis de Ambiente (Resend)
+
+Para o formulário de contato enviar e-mail via Resend, configure:
+
+```bash
+RESEND_API_KEY=...
+RESEND_TO_EMAIL=seu-email@dominio.com
+# Opcional (se não informar, usa onboarding@resend.dev)
+RESEND_FROM_EMAIL=contato@seu-dominio.com
+```
+
 ### Build e Produção
 
 ```bash

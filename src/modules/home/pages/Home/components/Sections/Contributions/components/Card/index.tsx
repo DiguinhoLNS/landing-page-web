@@ -1,11 +1,7 @@
 import clsx from 'clsx'
+import type { IContribution } from '@/modules/home/interfaces/IContribution'
 
-interface ContributionCardProps {
-    title: string
-    description?: string
-    company?: string
-    backgroundColor: string
-}
+type ContributionCardProps = IContribution
 
 export default function ContributionCard({
     title,
@@ -19,11 +15,11 @@ export default function ContributionCard({
         <>
             <div
                 className={clsx(
-                    'flex flex-col items-start gap-1 p-4',
+                    'flex flex-col items-start gap-1 p-6 pb-2',
                     backgroundColor
                 )}
             >
-                <p className={clsx('font-medium text-white text-xl text-center')}>
+                <p className={clsx('font-medium text-white text-xl')}>
                     {title}
                 </p>
 

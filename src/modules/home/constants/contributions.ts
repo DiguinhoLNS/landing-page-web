@@ -12,7 +12,7 @@ const contributions = [
         backgroundColor: 'bg-[#028297]',
     },
     {
-        title: 'CSJ - Jundiaí',
+        title: 'CIA de Saneamento de Jundiaí',
         description: 'Dashboard para monitoramento de indicadores de desempenho e análise de dados operacionais.',
         company: 'alta soluções',
         backgroundColor: 'bg-[#0D707F]',
@@ -31,7 +31,7 @@ const contributions = [
     },
     {
         title: 'UX Group',
-        description: 'Aplicações de roteirização para motoristas e acompanhamento de entregas',
+        description: 'Aplicações de roteirização para motoristas e acompanhamento de entregas em tempo real para last mile.',
         company: 'alta soluções',
         backgroundColor: 'bg-[#000000]',
     },
@@ -45,7 +45,7 @@ const contributions = [
         title: 'Hardwork Medicina',
         description: 'Plataformas de ensino e aprendizagem para residentes e revalidantes.',
         company: 'no mesmo',
-        backgroundColor: 'bg-company-hwm',
+        backgroundColor: 'bg-[#0D0D0D]',
     },
 ]
 

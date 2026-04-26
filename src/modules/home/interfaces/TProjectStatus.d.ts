@@ -1,0 +1,1 @@
+export type TProjectStatus = 'planned' | 'development' | 'concluded' | 'private' | 'archived'

@@ -1,4 +1,6 @@
-const jobs = [
+import type { IJob } from "../interfaces/IJob"
+
+const jobs: IJob[] = [
     {
         type: 'alta',
         link: 'https://altasolucoes.com.br',

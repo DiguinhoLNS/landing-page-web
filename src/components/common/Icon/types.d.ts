@@ -3,4 +3,5 @@ export interface IconProps {
     iconColor?: string
     iconVariant?: 'rounded' | 'outlined' | 'sharp'
     iconSize?: number
+    className?: string
 }

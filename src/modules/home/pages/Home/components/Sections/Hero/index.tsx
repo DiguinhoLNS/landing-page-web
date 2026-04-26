@@ -1,6 +1,9 @@
+'use client'
+
 import clsx from 'clsx'
 import Button from '@/components/common/Button'
 import Section from '@/components/page/Section'
+import scrollToView from '@/utils/scrollToView'
 
 export default function HomeHero() {
 
@@ -24,7 +27,7 @@ export default function HomeHero() {
                                 Olá, eu sou o
                             </p>
 
-                            <h1 className={clsx('font-extrabold text-onSurface text-8xl')}>
+                            <h1 className={clsx('font-extrabold text-onSurface text-6xl', 'sm:text-8xl')}>
                                 Rodr<span className={clsx('text-primary')}>igo</span>
                             </h1>
                         </div>
@@ -39,11 +42,17 @@ export default function HomeHero() {
                             <Button
                                 buttonMode='contained'
                                 label='Fale comigo'
+                                onClick={() => {
+                                    scrollToView('home-contact-section')
+                                }}
                             />
 
                             <Button
                                 buttonMode='outlined'
                                 label='Ver projetos'
+                                onClick={() => {
+                                    scrollToView('home-projects-section')
+                                }}
                             />
                         </div>
                     </div>
