@@ -11,13 +11,10 @@ export default class HomeController {
             body: JSON.stringify(data)
         })
 
-        if(response.ok) {
-            return
+        if (!response.ok) {
+            const data = await response.json().catch(() => ({}))
+            throw new Error(data?.error ?? 'Não foi possível enviar a mensagem agora.')
         }
-
-        const body = await response.json().catch(() => null) as { message?: string } | null
-
-        throw new Error(body?.message ?? 'Nao foi possivel enviar a mensagem agora.')
     }
 
 }
