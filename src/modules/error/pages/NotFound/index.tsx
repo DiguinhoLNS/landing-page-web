@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
 import Button from '@/components/common/Button'
+import ErrorLayout from '../../components/layout/Error'
 
 export default function ErrorNotFound() {
 
@@ -15,20 +16,24 @@ export default function ErrorNotFound() {
     return(
 
         <>
-            <div className={clsx('flex flex-col items-center justify-center')}>
-                <h1 className={clsx('font-bold text-primary text-[80px] text-center')}>
-                    404
-                </h1>
+            <ErrorLayout>
+                <div className={clsx('flex flex-col items-center justify-center')}>
+                    <h1 className={clsx('font-bold text-primary text-[80px] text-center')}>
+                        404
+                    </h1>
 
-                <p className={clsx('text-onSurface text-center')}>
-                    Ops... Página não encontrada!
-                </p>
-            </div>
+                    <p className={clsx('text-onSurface text-center')}>
+                        Ops... Página não encontrada!
+                    </p>
+                </div>
 
-            <Button
-                label='Voltar para home'
-                onClick={redirect}
-            />
+                <Button
+                    iconName='arrow_back'
+                    label='Voltar para home'
+                    fullWidth={false}
+                    onClick={redirect}
+                />
+            </ErrorLayout>
         </>
 
     )
