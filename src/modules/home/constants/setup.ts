@@ -2,7 +2,7 @@ import type { ISetupItem } from '../interfaces/ISetupItem'
 
 const commonItems: ISetupItem[] = [
     {
-        icon: 'monitor',
+        icon: 'jamboard_kiosk',
         label: 'Monitor',
         text: 'LG 34" Ultrawide 144hz'
     },
@@ -45,7 +45,7 @@ const setup: Record<'game' | 'work', ISetupItem[]> = {
         },
         {
             icon: 'hard_drive_2',
-            label: 'Outros',
+            label: 'Componentes',
             text: 'RTX 2060, 32GB Ram, 2TB SSD'
         },
         {
@@ -61,7 +61,7 @@ const setup: Record<'game' | 'work', ISetupItem[]> = {
         {
             icon: 'headset',
             label: 'Headset',
-            text: 'Corsair Virtuoso RGB Wireless'
+            text: 'Corsair Virtuoso RGB Wireless SE'
         },
         {
             icon: 'camera_video',

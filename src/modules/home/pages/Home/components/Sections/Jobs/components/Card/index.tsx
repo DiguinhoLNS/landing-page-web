@@ -40,7 +40,7 @@ export default function JobCard({
                 target='_blank'
                 className={clsx(
                     'group',
-                    'flex flex-col gap-2 w-full border rounded-lg p-6 default-click-animation',
+                    'flex flex-col gap-2 w-full border rounded-2xl p-6 default-click-animation',
                     style.background,
                     style.border
                 )}

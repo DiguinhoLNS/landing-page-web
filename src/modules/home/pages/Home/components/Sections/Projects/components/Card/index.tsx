@@ -27,7 +27,7 @@ export default function ProjectCard({
                 target='_blank'
                 className={clsx(
                     'group',
-                    'flex flex-col gap-4 w-full p-6 border border-outline rounded-lg bg-elevation-1 default-click-animation',
+                    'flex flex-col gap-4 w-full p-6 border border-outline rounded-2xl bg-elevation-1 default-click-animation',
                     'md:flex-row'
                 )}
             >

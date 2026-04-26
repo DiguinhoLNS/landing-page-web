@@ -17,7 +17,7 @@ export default function HomeHero() {
             >
                 <div
                     className={clsx(
-                        'flex flex-1 flex-col gap-20',
+                        'flex flex-1 flex-col gap-y-10 gap-x-20',
                         'md:flex-row md:items-center md:justify-between'
                     )}
                 >

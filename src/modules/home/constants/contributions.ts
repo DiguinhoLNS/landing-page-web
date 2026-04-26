@@ -19,7 +19,7 @@ const contributions = [
     },
     {
         title: 'Grupo SBS',
-        description: 'Sistemas de acesso e controle de ponto.',
+        description: 'Sistemas de acesso, aplicação de facilities e controle de ponto.',
         company: 'alta soluções',
         backgroundColor: 'bg-[#D10A10]',
     },
