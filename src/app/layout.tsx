@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import Clarity from '@microsoft/clarity'
+import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from '@wrksz/themes/next'
 import { Google_Sans, Roboto } from 'next/font/google'
 import AppClientProvider from '@/components/app/ClientProvider'
@@ -49,10 +50,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     >
                         <AppClientProvider>
                             {children}
+
+                            <Analytics />
                         </AppClientProvider>
                     </ThemeProvider>
                 </body>
-            </html>   
+            </html> 
         </>
     )
 }
