@@ -9,15 +9,21 @@ const contacts: IContact[] = [
     },
     {
         type: 'link',
+        label: 'LinkedIn',
+        displayValue: 'Rodrigo Santos',
+        link: 'https://www.linkedin.com/in/rodrigo-santos-389288202',
+    },
+    {
+        type: 'link',
         label: 'Github',
         displayValue: 'DiguinhoLNS',
         link: 'https://github.com/DiguinhoLNS',
     },
     {
         type: 'link',
-        label: 'LinkedIn',
-        displayValue: 'Rodrigo Santos',
-        link: 'https://www.linkedin.com/in/rodrigo-santos-389288202',
+        label: 'Instagram',
+        displayValue: 'orodrigolns',
+        link: 'https://www.instagram.com/orodrigolns',
     },
 ]
 

@@ -22,7 +22,7 @@ export default function ContactInfo() {
                             key={index}
                             className={clsx('flex items-baseline gap-4 w-full', 'text-sm')}
                         >
-                            <p className={clsx('w-13', 'text-onSurface/70')}>
+                            <p className={clsx('w-16', 'text-onSurface/70')}>
                                 {contact.label}
                             </p>
                             
