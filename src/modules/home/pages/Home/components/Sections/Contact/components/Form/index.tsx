@@ -25,23 +25,10 @@ export default function ContantForm() {
                     message: ''
                 }}
                 validationSchema={contactFormSchema}
-                validateOnChange
+                validateOnChange={false}
+                validateOnBlur={false}
                 onSubmit={async (v, { resetForm, setStatus }) => {
-                    setStatus(undefined)
-
-                    try {
-                        await HomeController.sendContact(v)
-                        resetForm()
-                        setStatus({ type: 'success', message: 'Mensagem enviada com sucesso.' })
-                    }
-                    catch(error) {
-                        setStatus({
-                            type: 'error',
-                            message: error instanceof Error
-                                ? error.message
-                                : 'Nao foi possivel enviar a mensagem agora.'
-                        })
-                    }
+                    await HomeController.sendContact(v, resetForm, setStatus)
                 }}
             >
                 {({ values, errors, handleChange, handleBlur, handleSubmit, isSubmitting, status }) => {

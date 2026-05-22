@@ -106,7 +106,14 @@
 
 @theme inline {
     --color-company-alta: #0A55CF;
-    --color-company-hwm: #09D785;
+    --color-company-hwm: #0D0D0D;
+    --color-company-hwm-variant: #09D785;
+    --color-company-maglog: #028297;
+    --color-company-csj: #0D707F;
+    --color-company-sbs: #D10A10;
+    --color-company-ux: #000000;
+    --color-company-comando: #45366F;
+    --color-company-legiao: #EC252D;
 
     --color-primary: var(--color-primary-base);
     --color-onPrimary: var(--color-onPrimary-base);

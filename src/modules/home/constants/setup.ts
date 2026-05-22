@@ -32,7 +32,7 @@ const setup: Record<'game' | 'work', ISetupItem[]> = {
         },
         {
             icon: 'earbud_left',
-            label: 'Fones',
+            label: 'Fone',
             text: 'AirPods Pro 2'
         },
         ...commonItems
@@ -57,6 +57,11 @@ const setup: Record<'game' | 'work', ISetupItem[]> = {
             icon: 'keyboard',
             label: 'Teclado',
             text: 'HyperX Alloy Origins'
+        },
+        {
+            icon: 'sports_esports',
+            label: 'Controle',
+            text: 'Xbox Wireless Series X|S'
         },
         {
             icon: 'headset',
