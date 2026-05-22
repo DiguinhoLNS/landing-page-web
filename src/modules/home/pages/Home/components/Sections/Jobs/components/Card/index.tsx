@@ -27,7 +27,8 @@ export default function JobCard({
     link,
     title,
     position,
-    period
+    period,
+    description
 }: JobCardProps) {
 
     const style = styles[type as keyof typeof styles]
@@ -40,41 +41,50 @@ export default function JobCard({
                 target='_blank'
                 className={clsx(
                     'group',
-                    'flex flex-col gap-2 w-full border rounded-2xl p-6 default-click-animation',
+                    'flex flex-col gap-4 w-full border rounded-2xl p-6 default-click-animation',
                     style.background,
                     style.border
                 )}
             >
-                <div className={clsx('flex items-start justify-between w-full')}>
-                    <div className={clsx('flex flex-col gap-1')}>
-                        <div className={clsx('flex items-center justify-center size-10 rounded-lg', style.iconBox)}>
-                            <Icon
-                                iconName={style.iconName}
-                                iconSize={20}
-                                iconColor={clsx(style.textColor)}
-                            />
-                        </div>
+                <div className={clsx('flex flex-col w-full')}>
+                    <div className={clsx('flex items-start justify-between w-full')}>
+                        <div className={clsx('flex flex-col gap-1')}>
+                            <div className={clsx('flex items-center justify-center size-10 rounded-lg', style.iconBox)}>
+                                <Icon
+                                    iconName={style.iconName}
+                                    iconSize={20}
+                                    iconColor={clsx(style.textColor)}
+                                />
+                            </div>
 
-                        <p className={clsx('font-medium text-xl', style.textColor)}>
-                            {title}
+                            <p className={clsx('font-medium text-xl', style.textColor)}>
+                                {title}
+                            </p>
+                        </div>
+                        
+                        <Icon
+                            iconName='call_made'
+                            iconSize={20}
+                            iconColor={clsx(style.textColor)}
+                            className={clsx('group-hover:translate-x-1 group-hover:-translate-y-1')}
+                        />
+                    </div>
+
+                    <div className={clsx('flex flex-col gap-2 w-full')}>
+                        <p className={clsx('text-onSurface/90')}>
+                            {position}
+                            {' | '}
+
+                            <span className={clsx('text-onSurface/70')}>
+                                {period}
+                            </span>
                         </p>
                     </div>
-                    
-                    <Icon
-                        iconName='call_made'
-                        iconSize={20}
-                        iconColor={clsx(style.textColor)}
-                        className={clsx('group-hover:translate-x-1 group-hover:-translate-y-1')}
-                    />
                 </div>
 
-                <div className={clsx('flex flex-col')}>
-                    <p className={clsx('text-onSurface/90')}>
-                        {position}
-                    </p>
-
-                    <p className={clsx('text-onSurface/70')}>
-                        {period}
+                <div>
+                    <p className={clsx('text-onSurface whitespace-pre-line')}>
+                        {description}
                     </p>
                 </div>
             </Link>
