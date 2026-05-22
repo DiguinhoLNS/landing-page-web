@@ -2,11 +2,11 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import Chip from '@/components/common/Chip'
 import Icon from '@/components/common/Icon'
-import type { IProject } from '@/modules/home/interfaces/IProject'
+import type { IPersonalProject } from '@/modules/home/interfaces/IPersonalProject'
 
-type ProjectCardProps = IProject
+type PersonalProjectCardProps = IPersonalProject
 
-export default function ProjectCard({
+export default function PersonalProjectCard({
     icon,
     link,
     repository,
@@ -14,7 +14,7 @@ export default function ProjectCard({
     description,
     status,
     tags
-}: ProjectCardProps) {
+}: PersonalProjectCardProps) {
 
     const statusLabel = status === 'concluded' ? 'Finalizado' : 'Em desenvolvimento'
     const statusVariant = status === 'concluded' ? 'success' : 'warning'
@@ -31,13 +31,26 @@ export default function ProjectCard({
                     'md:flex-row'
                 )}
             >
-                <div className={clsx('flex shrink-0 justify-between')}>
-                    <div className={clsx('flex items-center justify-center size-14 rounded-lg bg-primary/10')}>
-                        <Icon
-                            iconName={icon}
-                            iconSize={24}
-                            iconColor={clsx('text-primary')}
-                        />
+                <div className={clsx('flex shrink-0 items-start justify-between')}>
+                    <div className={clsx('flex items-center gap-4')}>
+                        <div className={clsx('flex items-center justify-center size-14 rounded-lg bg-primary/10')}>
+                            <Icon
+                                iconName={icon}
+                                iconSize={24}
+                                iconColor={clsx('text-primary')}
+                            />
+                        </div>
+
+                        <h3
+                            className={clsx(
+                                'transition-colors',
+                                'font-semibold text-onSurfaceVariant text-2xl',
+                                'group-hover:text-primary',
+                                'md:hidden'
+                            )}
+                        >
+                            {title}
+                        </h3>
                     </div>
 
                     <div className={clsx('block md:hidden')}>
@@ -48,11 +61,11 @@ export default function ProjectCard({
                             className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1' )}
                         />
                     </div>
-                </div>      
+                </div>
 
-                <div className={clsx('flex flex-1 flex-col gap-4')}>
+                <div className={clsx('flex flex-1 flex-col justify-between gap-4')}>
                     <div className={clsx('flex flex-col items-start gap-1 w-full')}>
-                        <div className={clsx('flex items-start justify-between w-full')}>
+                        <div className={clsx('hidden items-start justify-between w-full', 'md:flex')}>
                             <h3
                                 className={clsx(
                                     'transition-colors',
@@ -63,14 +76,12 @@ export default function ProjectCard({
                                 {title}
                             </h3>
 
-                            <div className={clsx('hidden md:block')}>
-                                <Icon
-                                    iconName='call_made'
-                                    iconSize={24}
-                                    iconColor={clsx('text-onSurfaceVariant')}
-                                    className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1')}
-                                />
-                            </div>
+                            <Icon
+                                iconName='call_made'
+                                iconSize={24}
+                                iconColor={clsx('text-onSurfaceVariant')}
+                                className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1')}
+                            />
                         </div>
 
                         <p className={clsx('text-onSurfaceVariant text-base')}>

@@ -7,7 +7,7 @@ const setupSwitchViewTabs: ITab[] = [
         value: 'work'
     },
     {
-        icon: 'sports_esports',
+        icon: 'joystick',
         label: 'Jogos',
         value: 'game'
     }

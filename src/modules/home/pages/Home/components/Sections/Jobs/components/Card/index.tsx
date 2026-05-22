@@ -13,10 +13,10 @@ const styles = {
     },
     hwm: {
         iconName: 'school',
-        background: 'bg-company-hwm/10',
-        border: 'border-company-hwm',
-        iconBox: 'bg-company-hwm/20',
-        textColor: 'text-company-hwm',
+        background: 'bg-company-hwm-variant/10',
+        border: 'border-company-hwm-variant',
+        iconBox: 'bg-company-hwm-variant/20',
+        textColor: 'text-company-hwm-variant',
     }
 }
 

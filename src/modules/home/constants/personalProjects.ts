@@ -1,6 +1,6 @@
-import type { IProject } from "../interfaces/IProject"
+import type { IPersonalProject } from "../interfaces/IPersonalProject"
 
-const projects: IProject[] = [
+const personalProjects: IPersonalProject[] = [
     {
         icon: 'view_kanban',
         link: 'https://project-board-web-ten.vercel.app',
@@ -27,4 +27,4 @@ const projects: IProject[] = [
     },
 ]
 
-export default projects
+export default personalProjects

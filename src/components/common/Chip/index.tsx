@@ -3,6 +3,8 @@ import clsx from 'clsx'
 interface ChipProps {
     label: string
     variant?: 'default' | 'success' | 'warning' | 'error'
+    backgroundColor?: string
+    textColor?: string
 }
 
 const variantStyles: Record<string, string> = {
@@ -14,7 +16,9 @@ const variantStyles: Record<string, string> = {
 
 export default function Chip({
     label,
-    variant = 'default'
+    variant = 'default',
+    backgroundColor,
+    textColor
 }: ChipProps) {
 
     const styles = variantStyles[variant]
@@ -23,7 +27,12 @@ export default function Chip({
 
         <>
             <div
-                className={clsx('flex items-center h-6 px-4 rounded-full', styles)}
+                className={clsx(
+                    'flex items-center h-6 px-4 rounded-full',
+                    (!backgroundColor && !textColor) && styles,
+                    backgroundColor,
+                    textColor
+                )}
             >
                 <p className={clsx('text-xs')}>
                     {label}

@@ -1,45 +1,45 @@
 const contributions = [
     {
         title: 'Alta Soluções',
-        description: 'Desenvolvimento de sistemas e aplicações.',
+        description: 'Desenvolvimento de aplicações e sistemas.',
         company: 'no mesmo',
         backgroundColor: 'bg-company-alta',
     },
     {
         title: 'Maglog',
-        description: 'Aplicação de expedição logística.',
+        description: 'Aplicativo de expedição logística.',
         company: 'alta soluções',
-        backgroundColor: 'bg-[#028297]',
+        backgroundColor: 'bg-company-maglog',
     },
     {
         title: 'CIA de Saneamento de Jundiaí',
         description: 'Dashboard para monitoramento de indicadores de desempenho e análise de dados operacionais.',
         company: 'alta soluções',
-        backgroundColor: 'bg-[#0D707F]',
+        backgroundColor: 'bg-company-csj',
     },
     {
         title: 'Grupo SBS',
         description: 'Sistemas de acesso, aplicação de facilities e controle de ponto.',
         company: 'alta soluções',
-        backgroundColor: 'bg-[#D10A10]',
+        backgroundColor: 'bg-company-sbs',
     },
     {
         title: 'Comando Log',
         description: 'Aplicações e sistemas logísticos.',
         company: 'alta soluções',
-        backgroundColor: 'bg-[#45366F]',
+        backgroundColor: 'bg-company-comando',
     },
     {
         title: 'UX Group',
         description: 'Aplicações de roteirização para motoristas e acompanhamento de entregas em tempo real para last mile.',
         company: 'alta soluções',
-        backgroundColor: 'bg-[#000000]',
+        backgroundColor: 'bg-company-ux',
     },
     {
         title: 'Legião Tricolor',
         description: 'confidencial',
         company: 'freelance',
-        backgroundColor: 'bg-[#EC252D]',
+        backgroundColor: 'bg-company-legiao',
     },
     {
         title: 'Hardwork Medicina',
