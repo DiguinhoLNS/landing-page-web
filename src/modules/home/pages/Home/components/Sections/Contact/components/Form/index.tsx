@@ -25,7 +25,8 @@ export default function ContantForm() {
                     message: ''
                 }}
                 validationSchema={contactFormSchema}
-                validateOnChange
+                validateOnChange={false}
+                validateOnBlur={false}
                 onSubmit={async (v, { resetForm, setStatus }) => {
                     setStatus(undefined)
 
