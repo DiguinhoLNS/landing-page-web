@@ -19,13 +19,13 @@ export default function BusinessProjectCard({
             <div
                 className={clsx(
                     'group',
-                    'flex flex-col gap-4 w-full p-6 border border-outline rounded-2xl bg-elevation-1',
+                    'flex flex-col gap-4 w-full p-4 border border-outline rounded-2xl bg-elevation-1',
                     'lg:flex-row'
                 )}
             >
                 <div className={clsx('flex shrink-0 items-start justify-between')}>
                     <div className={clsx('flex items-center gap-4')}>
-                        <div className={clsx('flex items-center justify-center size-14 rounded-lg bg-primary/10')}>
+                        <div className={clsx('flex shrink-0 items-center justify-center size-14 rounded-lg bg-primary/10')}>
                             <Icon
                                 iconName={icon}
                                 iconSize={24}

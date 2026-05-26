@@ -83,9 +83,10 @@ export default function JobCard({
                 </div>
 
                 <div>
-                    <p className={clsx('text-onSurface whitespace-pre-line')}>
-                        {description}
-                    </p>
+                    <p
+                        dangerouslySetInnerHTML={{ __html: description }}
+                        className={clsx('text-onSurface whitespace-pre-line')}
+                    />
                 </div>
             </Link>
         </>
