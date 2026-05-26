@@ -28,7 +28,7 @@ export default function PersonalProjectCard({
                 className={clsx(
                     'group',
                     'flex flex-col gap-4 w-full p-4 border border-outline rounded-2xl bg-elevation-1 default-click-animation',
-                    'md:flex-row'
+                    'md:flex-row md:p-6'
                 )}
             >
                 <div className={clsx('flex shrink-0 items-start justify-between')}>

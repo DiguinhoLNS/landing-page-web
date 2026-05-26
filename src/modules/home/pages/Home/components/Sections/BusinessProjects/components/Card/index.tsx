@@ -20,7 +20,7 @@ export default function BusinessProjectCard({
                 className={clsx(
                     'group',
                     'flex flex-col gap-4 w-full p-4 border border-outline rounded-2xl bg-elevation-1',
-                    'lg:flex-row'
+                    'md:p-6 lg:flex-row'
                 )}
             >
                 <div className={clsx('flex shrink-0 items-start justify-between')}>
@@ -58,9 +58,10 @@ export default function BusinessProjectCard({
                             {title}
                         </h3>
 
-                        <p className={clsx('text-onSurfaceVariant text-base')}>
-                            {description}
-                        </p>
+                        <p
+                            dangerouslySetInnerHTML={{ __html: description }}
+                            className={clsx('text-onSurfaceVariant text-base')}
+                        />
                     </div>
 
                     <div className={clsx('flex gap-2 flex-wrap w-full')}>
