@@ -56,7 +56,7 @@ export default function PersonalProjectCard({
                     <div className={clsx('block md:hidden')}>
                         <Icon
                             iconName='call_made'
-                            iconSize={24}
+                            iconSize={20}
                             iconColor={clsx('text-onSurfaceVariant')}
                             className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1' )}
                         />
@@ -78,7 +78,7 @@ export default function PersonalProjectCard({
 
                             <Icon
                                 iconName='call_made'
-                                iconSize={24}
+                                iconSize={20}
                                 iconColor={clsx('text-onSurfaceVariant')}
                                 className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1')}
                             />
