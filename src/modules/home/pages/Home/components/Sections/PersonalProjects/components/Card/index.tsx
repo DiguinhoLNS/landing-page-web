@@ -16,18 +16,21 @@ export default function PersonalProjectCard({
     tags
 }: PersonalProjectCardProps) {
 
-    const statusLabel = status === 'concluded' ? 'Finalizado' : 'Em desenvolvimento'
+    const statusLabel = status === 'concluded' ? 'Finalizado' : status === 'development' ? 'Em desenvolvimento' : 'Planejado'
     const statusVariant = status === 'concluded' ? 'success' : 'warning'
+
+    const SHOW_LINK = !!link || !!repository
 
     return(
 
         <>
             <Link
                 href={link || repository || '#'}
-                target='_blank'
+                target={SHOW_LINK ? '_blank' : undefined}
                 className={clsx(
-                    'group',
-                    'flex flex-col gap-4 w-full p-4 border border-outline rounded-2xl bg-elevation-1 default-click-animation',
+                    !SHOW_LINK && 'cursor-default',
+                    SHOW_LINK && 'default-click-animation group',
+                    'flex flex-col gap-4 w-full p-4 border border-outline rounded-2xl bg-elevation-1',
                     'md:flex-row md:p-6'
                 )}
             >
@@ -53,14 +56,16 @@ export default function PersonalProjectCard({
                         </h3>
                     </div>
 
-                    <div className={clsx('block md:hidden')}>
-                        <Icon
-                            iconName='call_made'
-                            iconSize={20}
-                            iconColor={clsx('text-onSurfaceVariant')}
-                            className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1' )}
-                        />
-                    </div>
+                    {SHOW_LINK && (
+                        <div className={clsx('block md:hidden')}>
+                            <Icon
+                                iconName='call_made'
+                                iconSize={20}
+                                iconColor={clsx('text-onSurfaceVariant')}
+                                className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1' )}
+                            />
+                        </div>
+                    )}
                 </div>
 
                 <div className={clsx('flex flex-1 flex-col justify-between gap-4')}>
@@ -76,12 +81,14 @@ export default function PersonalProjectCard({
                                 {title}
                             </h3>
 
-                            <Icon
-                                iconName='call_made'
-                                iconSize={20}
-                                iconColor={clsx('text-onSurfaceVariant')}
-                                className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1')}
-                            />
+                            {SHOW_LINK && (
+                                <Icon
+                                    iconName='call_made'
+                                    iconSize={20}
+                                    iconColor={clsx('text-onSurfaceVariant')}
+                                    className={clsx('group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1')}
+                                />
+                            )}
                         </div>
 
                         <p className={clsx('text-onSurfaceVariant text-base')}>

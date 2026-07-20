@@ -7,7 +7,7 @@ const commonItems: ISetupItem[] = [
         text: 'LG 34" Ultrawide 144hz'
     },
     {
-        icon: 'chair_alt',
+        icon: 'tatami_seat',
         label: 'Cadeira',
         text: 'Sensetup Cosy T03'
     },
@@ -31,7 +31,7 @@ const setup: Record<'game' | 'work', ISetupItem[]> = {
             text: 'Logitech MX Mechanical'
         },
         {
-            icon: 'earbud_left',
+            icon: 'earbuds_2',
             label: 'Fone',
             text: 'AirPods Pro 2'
         },

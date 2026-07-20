@@ -2,6 +2,20 @@ import type { IPersonalProject } from "../interfaces/IPersonalProject"
 
 const personalProjects: IPersonalProject[] = [
     {
+        icon: 'palette',
+        title: 'Material You Components',
+        description: 'Biblioteca de componentes React que replica o design system Material You.',
+        status: 'planned',
+        tags: ['React', 'TypeScript', 'Storybook', 'Jest', 'NPM']
+    },
+    {
+        icon: 'savings',
+        title: 'Quem me Deve Web',
+        description: 'Aplicação web para gerenciar cobranças pessoais, acompanhar devedores e gerar pagamentos via Pix.',
+        status: 'planned',
+        tags: ['Next.js', 'TypeScript', 'Firebase', 'PIX']
+    },
+    {
         icon: 'view_kanban',
         link: 'https://project-board-web-ten.vercel.app',
         title: 'Board',
@@ -12,8 +26,8 @@ const personalProjects: IPersonalProject[] = [
     {
         icon: 'savings',
         repository: 'https://github.com/DiguinhoLNS/quem-me-deve-app-v2',
-        title: 'Quem me Deve?',
-        description: 'Aplicativo para acompanhar cobranças pessoais, com foco em simplicidade, uso offline e geração de pagamento via Pix.',
+        title: 'Quem me Deve Mobile',
+        description: 'Aplicativo simples para acompanhar cobranças pessoais no dia a dia, com uso offline e geração de pagamento via Pix.',
         status: 'concluded',
         tags: ['React Native', 'TypeScript', 'Redux Toolkit']
     },
