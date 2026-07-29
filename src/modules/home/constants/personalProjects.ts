@@ -12,8 +12,8 @@ const personalProjects: IPersonalProject[] = [
         icon: 'savings',
         title: 'Quem me Deve Web',
         description: 'Aplicação web para gerenciar cobranças pessoais, acompanhar devedores e gerar pagamentos via Pix.',
-        status: 'planned',
-        tags: ['Next.js', 'TypeScript', 'Firebase', 'PIX']
+        status: 'development',
+        tags: ['Next.js', 'NestJS', 'PostgreSQL']
     },
     {
         icon: 'view_kanban',
