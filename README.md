@@ -1,104 +1,128 @@
-# Landing Page Web
+# rodrigo.dev
 
-Uma landing page moderna e responsiva construída com [Next.js](https://nextjs.org), [React](https://react.dev) e [Tailwind CSS](https://tailwindcss.com).
+Portfólio pessoal construído com [Next.js](https://nextjs.org) (App Router), [React](https://react.dev) e [Tailwind CSS](https://tailwindcss.com). Página única com navegação por seções, tema claro/escuro e formulário de contato com envio de e-mail via [Resend](https://resend.com).
+
+## ✨ Funcionalidades
+
+- **Seções**: Início, Experiência, Contribuições, Produtos, Projetos, Setup e Contato
+- **Navegação por seção**: header com scroll spy no desktop e barra de navegação inferior (`BottomNav`) no mobile
+- **Tema claro/escuro** com `@wrksz/themes` (padrão: escuro)
+- **Animações** com Framer Motion — revelação ao rolar (`Reveal`), molas e física compartilhadas em `src/utils/motion`
+- **Carrosséis arrastáveis** (`Pager` + `useDragGesture`)
+- **Formulário de contato** validado com Formik + Yup, enviado pela rota `POST /api/contact`
+- **Barra de progresso** de navegação com `@bprogress/next`
+- **Analytics**: Vercel Analytics, Speed Insights e Microsoft Clarity
 
 ## 🚀 Stack
 
 - **Framework**: [Next.js 16.2.4](https://nextjs.org)
 - **Linguagem**: [TypeScript 5](https://www.typescriptlang.org)
 - **React**: 19.2.4
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com)
-- **Animações**: [Framer Motion 12](https://www.framer.com/motion)
-- **Gerenciamento de Estado**: [Zustand 5](https://github.com/pmndrs/zustand)
-- **Validação de Formulários**: [Formik 2](https://formik.org) + [Yup](https://github.com/jquense/yup)
+- **Estilos**: [Tailwind CSS 4](https://tailwindcss.com) + `tailwind-scrollbar` + `tailwindcss-animated`
+- **Animações**: [Framer Motion 12](https://motion.dev), [typewriter-effect](https://github.com/tameemsafi/typewriterjs)
+- **Formulários**: [Formik 2](https://formik.org) + [Yup](https://github.com/jquense/yup)
+- **E-mail**: [Resend](https://resend.com)
 - **Ícones**: [Material Symbols](https://fonts.google.com/icons)
-- **Utilitários**: [clsx](https://github.com/lukeed/clsx), [moment](https://momentjs.com)
+- **Fontes**: Google Sans e Roboto via `next/font`
+- **Utilitários**: [clsx](https://github.com/lukeed/clsx)
 
 ## 📋 Pré-requisitos
 
-- Node.js 18+
-- Yarn 4.14.1 (gerenciador de pacotes)
+- Node.js 20+
+- Yarn 4.14.1 (via Corepack: `corepack enable`)
 
 ## 🏃 Começando
-
-### Instalação
 
 ```bash
 # Instalar dependências
 yarn install
-```
 
-### Desenvolvimento
-
-```bash
 # Iniciar servidor de desenvolvimento
 yarn dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-O site atualiza automaticamente conforme você edita os arquivos.
+### Variáveis de Ambiente
 
-### Variáveis de Ambiente (Resend)
-
-Para o formulário de contato enviar e-mail via Resend, configure:
+Crie um `.env.local` na raiz:
 
 ```bash
+# Resend — envio do formulário de contato
 RESEND_API_KEY=...
-RESEND_TO_EMAIL=seu-email@dominio.com
-# Opcional (se não informar, usa onboarding@resend.dev)
-RESEND_FROM_EMAIL=contato@seu-dominio.com
+CONTACT_EMAIL=seu-email@dominio.com   # destinatário das mensagens
+
+# Microsoft Clarity
+NEXT_PUBLIC_CLARITY_ID=...
 ```
+
+> O remetente está fixo em `src/app/api/contact/route.ts` (`contato@rodrigolns.com.br`) e precisa ser um domínio verificado na sua conta Resend.
 
 ### Build e Produção
 
 ```bash
-# Criar build para produção
 yarn build
-
-# Iniciar servidor de produção
 yarn start
 ```
 
-## 📦 Scripts Disponíveis
+## 📦 Scripts
 
-- `yarn dev` - Inicia servidor de desenvolvimento
-- `yarn build` - Compila o projeto para produção
-- `yarn start` - Inicia servidor de produção (requer `build` prévio)
-- `yarn lint` - Executa verificação de linting com ESLint
-- `yarn commitlint` - Valida mensagens de commit (executado automaticamente com Husky)
+| Script | Descrição |
+| --- | --- |
+| `yarn dev` | Servidor de desenvolvimento |
+| `yarn build` | Build de produção |
+| `yarn start` | Servidor de produção (requer `build`) |
+| `yarn lint` | ESLint |
+| `yarn commitlint` | Valida a mensagem de commit (executado pelo Husky) |
 
 ## 📁 Estrutura do Projeto
 
 ```
 src/
-├── app/                    # Next.js App Router
-│   ├── globals.css        # Estilos globais
-│   ├── layout.tsx         # Layout raiz
-│   ├── not-found.tsx      # Página 404
-│   └── (app)/             # Grupo de rotas
-│       ├── layout.tsx     # Layout do grupo
-│       └── page.tsx       # Página inicial
-├── components/            # Componentes React
-│   ├── app/              # Componentes de aplicação
-│   ├── base/             # Componentes base reutilizáveis
-│   ├── common/           # Componentes comuns (Button, Icon, etc)
-│   └── page/             # Componentes específicos de página
-├── hooks/                # React Hooks personalizados
-│   ├── useAppBreakpoint/
-│   └── useOutsideClick/
-└── modules/              # Módulos de funcionalidades
-    ├── error/            # Módulo de erro
-    └── home/             # Módulo home
+├── app/
+│   ├── (app)/                # Layout com Header, Footer e BottomNav + página inicial
+│   ├── api/contact/          # Rota POST do formulário de contato (Resend)
+│   ├── globals.css           # Tokens de tema e estilos globais
+│   ├── layout.tsx            # Layout raiz: fontes, tema, analytics
+│   └── not-found.tsx         # Página 404
+├── components/
+│   ├── app/                  # Providers (ClientProvider, barra de progresso)
+│   ├── base/                 # Primitivos (ReactPortal)
+│   ├── common/               # Button, Chip, Icon, Pager, Reveal, Tab, TextInput...
+│   └── page/                 # Header, Footer, BottomNav, Section, Container
+├── hooks/                    # useScrollSpy, useSectionNav, useDragGesture,
+│                             # usePressable, useMediaQuery, useAppBreakpoint...
+├── modules/
+│   ├── error/                # Página de erro / 404
+│   └── home/
+│       ├── constants/        # Conteúdo: seções, empregos, projetos, contatos, setup
+│       ├── controllers/      # Lógica do formulário de contato
+│       ├── interfaces/       # Tipos do conteúdo
+│       ├── pages/Home/       # Página inicial e suas seções
+│       └── services/         # Chamada à API de contato
+└── utils/
+    ├── motion/               # Springs e física compartilhadas das animações
+    └── scrollToView/
 ```
 
-## ⚙️ Configuração
+### Editando o conteúdo
 
-### Commitlint
+Todo o conteúdo do portfólio fica em `src/modules/home/constants/`:
 
-Mensagens de commit validadas com Commitlint (Conventional Commits). Configuração em `commitlint.config.js`.
+- `sections.ts` — ordem, rótulos e ícones da navegação
+- `jobs.ts` — experiência profissional
+- `contributions.ts` — contribuições
+- `businessProjects.ts` — produtos
+- `personalProjects.ts` / `projectStatus.ts` — projetos pessoais e seus status
+- `setup.ts` — setup de trabalho e jogos
+- `contacts.ts` — links de contato
 
-Formato esperado:
+## ⚙️ Convenções
+
+### Commits
+
+Mensagens validadas com Commitlint ([Conventional Commits](https://www.conventionalcommits.org)) via hook `commit-msg` do Husky. Configuração em `commitlint.config.js`.
+
 ```
 <type>(<scope>): <subject>
 ```
@@ -108,17 +132,9 @@ Exemplos:
 - `fix(button): corrigir espaçamento`
 - `docs(readme): atualizar instruções`
 
-### Husky
+### Next.js 16
 
-Hooks de git automáticos para validar commits. Configurado em `.husky/`.
-
-## 📚 Recursos Úteis
-
-- [Documentação Next.js](https://nextjs.org/docs)
-- [Documentação React](https://react.dev)
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [Framer Motion](https://www.framer.com/motion)
-- [Zustand](https://github.com/pmndrs/zustand)
+Esta versão do Next.js tem mudanças de API em relação às anteriores. Consulte `node_modules/next/dist/docs/` antes de alterar rotas, layouts ou configurações (ver `AGENTS.md`).
 
 ## 📝 Licença
 
