@@ -1,6 +1,6 @@
 {
   "name": "landing-page-web",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -25,6 +25,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "resend": "^6.12.2",
+    "simple-icons": "^16.32.0",
     "typewriter-effect": "^2.22.0",
     "yup": "^1.7.1",
     "zustand": "^5.0.12"
