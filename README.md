@@ -132,10 +132,6 @@ Exemplos:
 - `fix(button): corrigir espaçamento`
 - `docs(readme): atualizar instruções`
 
-### Next.js 16
-
-Esta versão do Next.js tem mudanças de API em relação às anteriores. Consulte `node_modules/next/dist/docs/` antes de alterar rotas, layouts ou configurações (ver `AGENTS.md`).
-
 ## 📝 Licença
 
 Este projeto está sob a licença MIT.
