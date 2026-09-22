@@ -14,7 +14,7 @@ export default function HomeStack() {
                 <SectionTitle
                     label='Stack'
                     title='Com o que eu construo'
-                    description='As tecnologias que uso para tirar produtos do papel.'
+                    description='As tecnologias que uso no dia a dia para desenvolver produtos escaláveis.'
                 />
 
                 <div className={clsx('flex flex-col w-full')}>
