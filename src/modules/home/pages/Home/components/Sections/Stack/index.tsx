@@ -1,7 +1,7 @@
 import clsx from 'clsx'
+import Reveal from '@/components/common/Reveal'
 import Section from '@/components/page/Section'
 import SectionTitle from '@/components/common/SectionTitle'
-import Reveal from '@/components/common/Reveal'
 import stack from '@/modules/home/constants/stack'
 import StackBadge from './components/Badge'
 
@@ -14,7 +14,7 @@ export default function HomeStack() {
                 <SectionTitle
                     label='Stack'
                     title='Com o que eu construo'
-                    description='Linguagens, frameworks e ferramentas do dia a dia, do front ao deploy.'
+                    description='As tecnologias que uso para tirar produtos do papel.'
                 />
 
                 <div className={clsx('flex flex-col w-full')}>
