@@ -1,7 +1,8 @@
 'use client'
 
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
+import springs, { crossFade } from '@/utils/motion/springs'
 import Container from '../Container'
 
 interface SectionProps {
@@ -18,19 +19,22 @@ export default function Section({
     contentClassName
 }: SectionProps) {
 
+    const reducedMotion = useReducedMotion()
+
     return(
 
         <>
             <motion.section
                 id={id}
                 className={clsx(
-                    'w-full py-10',
+                    'w-full scroll-mt-20 py-16',
+                    'md:py-24',
                     className
                 )}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
+                initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 28 }}
+                whileInView={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                transition={reducedMotion ? crossFade : springs.ui}
+                viewport={{ once: true, amount: 0.12 }}
             >
                 <Container className={contentClassName}>
                     {children}

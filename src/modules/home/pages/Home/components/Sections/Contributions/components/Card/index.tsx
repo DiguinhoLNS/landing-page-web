@@ -10,33 +10,36 @@ export default function ContributionCard({
     backgroundColor
 }: ContributionCardProps) {
 
-    return (
+    return(
 
         <>
             <div
                 className={clsx(
-                    'flex flex-col items-start gap-1 p-4 pb-2',
-                    'md:p-6',
-                    backgroundColor
+                    'flex flex-col gap-2 w-full h-full p-5 rounded-[1.25rem]',
+                    'bg-elevation-1 border border-outlineVariant shadow-card'
                 )}
             >
-                <p className={clsx('font-medium text-white text-xl')}>
-                    {title}
+                <div className={clsx('flex items-center gap-2.5')}>
+                    <span
+                        aria-hidden
+                        className={clsx('size-2.5 shrink-0 rounded-full', backgroundColor)}
+                    />
+
+                    <p className={clsx('text-headline text-onSurface')}>
+                        {title}
+                    </p>
+                </div>
+
+                <p className={clsx('flex-1 text-footnote text-onSurfaceVariant')}>
+                    {description}
                 </p>
 
-                <div className={clsx('flex-1')}>
-                    <p className={clsx('text-white/90 text-base')}>
-                        {description}
-                    </p>
-                </div>
-
-                <div className={clsx('flex justify-end w-full')}>
-                    <p className={clsx('text-white/60 text-[10px]')}>
-                        {company}
-                    </p>
-                </div>
+                <p className={clsx('text-caption text-onSurfaceVariant/70 lowercase')}>
+                    {company}
+                </p>
             </div>
         </>
 
     )
+
 }

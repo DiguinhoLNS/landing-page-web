@@ -1,0 +1,11 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+        {
+            "name": "landing-page-web",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": ["dev"],
+            "port": 3000
+        }
+    ]
+}

@@ -26,8 +26,6 @@ const googleSans = Google_Sans({
     fallback: ['system-ui', 'sans-serif']
 })
 
-
-
 export const metadata = {
     title: 'rodrigo.dev',
 }

@@ -1,58 +1,74 @@
+'use client'
+
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
-import type { TabButtonProps } from '../../types'
 import Icon from '@/components/common/Icon'
+import usePressable from '@/hooks/usePressable'
+import springs from '@/utils/motion/springs'
+import type { TabButtonProps } from '../../types'
 
-export default function TabButton({ icon, label, active, onClick }: TabButtonProps) {
+export default function TabButton({
+    icon,
+    label,
+    active,
+    standaloneIndicator = true,
+    onClick
+}: TabButtonProps) {
+
+    const pressable = usePressable({ scale: 0.96 })
 
     return(
 
         <>
-            <button
+            <motion.button
+                {...pressable}
+                type='button'
+                role='tab'
+                aria-selected={active}
                 className={clsx(
                     'relative',
-                    'w-full px-4 py-3 rounded-lg',
-                    'transition-all cursor-pointer'
+                    'w-full h-10 px-4 rounded-full cursor-pointer',
+                    'outline-none focus-visible:ring-2 focus-visible:ring-primary'
                 )}
                 onClick={onClick}
             >
-                <div
+                {(standaloneIndicator && active) && (
+                    <motion.span
+                        aria-hidden
+                        layoutId='active-tab-indicator'
+                        className={clsx('absolute inset-0', 'rounded-full bg-onSurface/10')}
+                        transition={springs.move}
+                    />
+                )}
+
+                <span
                     className={clsx(
                         'z-10 relative',
-                        'flex justify-center items-center gap-2 w-full h-full',
-                        'pointer-events-none'
+                        'flex justify-center items-center gap-2 w-full h-full pointer-events-none'
                     )}
                 >
                     {!!icon && (
                         <Icon
                             iconName={icon}
                             iconSize={20}
-                            iconColor={clsx(active ? 'text-onSurface' : 'text-onSurface/60')}
+                            iconColor={clsx(
+                                'transition-colors duration-150',
+                                active ? 'text-onSurface' : 'text-onSurfaceVariant'
+                            )}
                         />
                     )}
 
-                    <p
+                    <span
                         className={clsx(
-                            'transition-all',
-                            'font-medium text-base text-center',
-                            active ? 'text-onSurface' : 'text-onSurface/60'
+                            'transition-colors duration-150',
+                            'text-footnote font-medium text-center',
+                            active ? 'text-onSurface' : 'text-onSurfaceVariant'
                         )}
                     >
                         {label}
-                    </p>
-                </div>
-
-                {active && (
-                    <motion.div
-                        layoutId='active-tab-indicator'
-                        className={clsx(
-                            'absolute inset-0',
-                            'bg-surface rounded-lg transition-colors'
-                        )}
-                        transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
-                    />
-                )}
-            </button>
+                    </span>
+                </span>
+            </motion.button>
         </>
 
     )

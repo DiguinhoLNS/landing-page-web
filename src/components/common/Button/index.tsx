@@ -3,13 +3,18 @@ import clsx from 'clsx'
 import BaseButton from './components/BaseButton'
 import type { ButtonProps } from './types'
 
-export default function Button(props: ButtonProps) {
+export default function Button({ href, target, ...props }: ButtonProps) {
 
-    if(props.href) {
+    if(href) {
+        const external = /^https?:\/\//.test(href)
+        const resolvedTarget = target ?? (external ? '_blank' : undefined)
+
         return(
             <Link
-                href={props.href}
-                className={clsx('w-full rounded-full')}
+                href={href}
+                target={resolvedTarget}
+                rel={resolvedTarget === '_blank' ? 'noreferrer' : undefined}
+                className={clsx('rounded-full', props.fullWidth !== false && 'w-full')}
             >
                 <BaseButton {...props} />
             </Link>
