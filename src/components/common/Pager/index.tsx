@@ -138,7 +138,11 @@ export default function Pager({
                 borda, já que `overflow` recorta na caixa de padding. */}
             <motion.div
                 ref={viewportRef}
-                className={clsx('relative w-[calc(100%+1.5rem)] overflow-hidden -m-3', className)}
+                className={clsx(
+                    'relative w-[calc(100%+1.5rem)] overflow-hidden -m-3',
+                    (!reducedMotion && pages.length > 1) && 'cursor-grab active:cursor-grabbing',
+                    className
+                )}
                 animate={{ height }}
                 transition={reducedMotion ? crossFade : springs.move}
                 style={{ touchAction: 'pan-y' }}

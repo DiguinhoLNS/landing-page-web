@@ -382,10 +382,12 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* Nada de seleção acidental no meio de um gesto de arrastar. */
+/* Nada de seleção acidental no meio de um gesto de arrastar. O cursor vai no
+   body inteiro porque, com pointer capture, o mouse pode sair da superfície. */
 .dragging,
 .dragging * {
     user-select: none !important;
+    cursor: grabbing !important;
 }
 
 .main-scrollbar {
