@@ -21,6 +21,11 @@ const homeSections: IHomeSection[] = [
         compact: true
     },
     {
+        id: 'home-stack-section',
+        label: 'Stack',
+        icon: 'stacks'
+    },
+    {
         id: 'home-contributions-section',
         label: 'Contribuições',
         icon: 'deployed_code'
@@ -57,7 +62,7 @@ export const compactHomeSections = homeSections.filter(section => section.compac
 /**
  * Traduz a seção realmente em tela para o item que a representa numa nav.
  *
- * Nenhuma nav cabe todas as seções: Contribuições e Setup ficam de fora da
+ * Nenhuma nav cabe todas as seções: Stack, Contribuições e Setup ficam de fora da
  * versão compacta. Sem esse mapeamento, rolar até uma seção não listada
  * deixaria a nav sem nenhum item ativo — o indicador desmonta e pisca em vez
  * de deslizar, e a tela para de responder "onde eu estou".

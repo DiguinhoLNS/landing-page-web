@@ -3653,6 +3653,7 @@ __metadata:
     react: "npm:19.2.4"
     react-dom: "npm:19.2.4"
     resend: "npm:^6.12.2"
+    simple-icons: "npm:^16.32.0"
     tailwind-scrollbar: "npm:^4.0.2"
     tailwindcss: "npm:^4"
     tailwindcss-animated: "npm:^2.0.0"
@@ -4806,6 +4807,13 @@ __metadata:
     side-channel-map: "npm:^1.0.1"
     side-channel-weakmap: "npm:^1.0.2"
   checksum: 10c0/cb20dad41eb032e6c24c0982e1e5a24963a28aa6122b4f05b3f3d6bf8ae7fd5474ef382c8f54a6a3ab86e0cac4d41a23bd64ede3970e5bfb50326ba02a7996e6
+  languageName: node
+  linkType: hard
+
+"simple-icons@npm:^16.32.0":
+  version: 16.32.0
+  resolution: "simple-icons@npm:16.32.0"
+  checksum: 10c0/111e9c0e3541583e2468f36d4dcd0f3addfea6c6eeb080d97615d5f0c826467d483086147012f8705aa0f227035fb975524dfedfc6dd5c38687b2067b5757e07
   languageName: node
   linkType: hard
 
