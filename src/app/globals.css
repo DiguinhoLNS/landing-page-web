@@ -5,103 +5,130 @@
 
 @custom-variant dark (&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *));
 
+/* ==========================================================================
+   Paleta — superfícies neutras, verde reservado para acento e estados.
+   Os nomes dos tokens seguem o contrato do @wrksz/themes; só os valores
+   mudaram: as rampas de surface/outline/elevation foram neutralizadas.
+   ========================================================================== */
+
 :root {
-    width: 100vw;
+    width: 100%;
     height: 100svh;
 
-    --color-primary-light: rgb(16, 109, 32);
+    /* ---------- light ---------- */
+    --color-primary-light: rgb(18, 116, 38);
     --color-onPrimary-light: rgb(255, 255, 255);
-    --color-primaryContainer-light: rgb(157, 248, 152);
-    --color-onPrimaryContainer-light: rgb(0, 34, 4);
-    --color-secondary-light: rgb(82, 99, 79);
+    --color-primaryContainer-light: rgb(206, 243, 202);
+    --color-onPrimaryContainer-light: rgb(0, 40, 8);
+    --color-secondary-light: rgb(84, 84, 94);
     --color-onSecondary-light: rgb(255, 255, 255);
-    --color-secondaryContainer-light: rgb(213, 232, 206);
-    --color-onSecondaryContainer-light: rgb(17, 31, 15);
-    --color-tertiary-light: rgb(56, 101, 106);
+    --color-secondaryContainer-light: rgb(232, 232, 238);
+    --color-onSecondaryContainer-light: rgb(28, 28, 33);
+    --color-tertiary-light: rgb(62, 92, 110);
     --color-onTertiary-light: rgb(255, 255, 255);
-    --color-tertiaryContainer-light: rgb(188, 235, 240);
-    --color-onTertiaryContainer-light: rgb(0, 32, 35);
+    --color-tertiaryContainer-light: rgb(215, 231, 242);
+    --color-onTertiaryContainer-light: rgb(10, 30, 42);
     --color-error-light: rgb(186, 26, 26);
     --color-onError-light: rgb(255, 255, 255);
-    --color-errorContainer-light: rgb(255, 218, 214);
+    --color-errorContainer-light: rgb(255, 224, 220);
     --color-onErrorContainer-light: rgb(65, 0, 2);
-    --color-success-light: rgb(16, 109, 32);
+    --color-success-light: rgb(18, 116, 38);
     --color-onSuccess-light: rgb(255, 255, 255);
-    --color-successContainer-light: rgb(157, 248, 152);
-    --color-onSuccessContainer-light: rgb(0, 34, 4);
-    --color-warning-light: rgb(121, 89, 0);
+    --color-successContainer-light: rgb(206, 243, 202);
+    --color-onSuccessContainer-light: rgb(0, 40, 8);
+    --color-warning-light: rgb(140, 92, 0);
     --color-onWarning-light: rgb(255, 255, 255);
-    --color-warningContainer-light: rgb(255, 223, 160);
-    --color-onWarningContainer-light: rgb(38, 26, 0);
-    --color-background-light: rgb(252, 253, 246);
-    --color-onBackground-light: rgb(26, 28, 25);
-    --color-surface-light: rgb(252, 253, 246);
-    --color-onSurface-light: rgb(26, 28, 25);
-    --color-surfaceVariant-light: rgb(222, 229, 216);
-    --color-onSurfaceVariant-light: rgb(66, 73, 64);
-    --color-outline-light: rgb(114, 121, 111);
-    --color-outlineVariant-light: rgb(194, 201, 189);
+    --color-warningContainer-light: rgb(255, 235, 196);
+    --color-onWarningContainer-light: rgb(42, 28, 0);
+
+    --color-background-light: rgb(246, 246, 248);
+    --color-onBackground-light: rgb(22, 22, 26);
+    --color-surface-light: rgb(246, 246, 248);
+    --color-onSurface-light: rgb(22, 22, 26);
+    --color-surfaceVariant-light: rgb(233, 233, 238);
+    --color-onSurfaceVariant-light: rgb(88, 88, 98);
+    --color-outline-light: rgb(202, 202, 210);
+    --color-outlineVariant-light: rgb(226, 226, 232);
     --color-shadow-light: rgb(0, 0, 0);
     --color-scrim-light: rgb(0, 0, 0);
-    --color-inverseSurface-light: rgb(47, 49, 45);
-    --color-inverseOnSurface-light: rgb(240, 241, 235);
-    --color-inversePrimary-light: rgb(130, 219, 126);
-    --color-elevation-0-light: transparent;
-    --color-elevation-1-light: rgb(240, 246, 235);
-    --color-elevation-2-light: rgb(233, 242, 229);
-    --color-elevation-3-light: rgb(226, 237, 223);
-    --color-elevation-4-light: rgb(224, 236, 220);
-    --color-elevation-5-light: rgb(219, 233, 216);
-    --color-surfaceDisabled-light: rgba(26, 28, 25, 0.12);
-    --color-onSurfaceDisabled-light: rgba(26, 28, 25, 0.38);
-    --color-backdrop-light: rgba(44, 50, 42, 0.4);
+    --color-inverseSurface-light: rgb(30, 30, 35);
+    --color-inverseOnSurface-light: rgb(244, 244, 247);
+    --color-inversePrimary-light: rgb(126, 224, 132);
 
-    --color-primary-dark: rgb(130, 219, 126);
-    --color-onPrimary-dark: rgb(0, 57, 10);
-    --color-primaryContainer-dark: rgb(0, 83, 18);
-    --color-onPrimaryContainer-dark: rgb(157, 248, 152);
-    --color-secondary-dark: rgb(186, 204, 179);
-    --color-onSecondary-dark: rgb(37, 52, 35);
-    --color-secondaryContainer-dark: rgb(59, 75, 56);
-    --color-onSecondaryContainer-dark: rgb(213, 232, 206);
-    --color-tertiary-dark: rgb(160, 207, 212);
-    --color-onTertiary-dark: rgb(0, 54, 59);
-    --color-tertiaryContainer-dark: rgb(31, 77, 82);
-    --color-onTertiaryContainer-dark: rgb(188, 235, 240);
+    /* Em light a profundidade vem da sombra, não do tom: superfícies
+       elevadas são brancas e a hierarquia é lida pela sombra. */
+    --color-elevation-0-light: transparent;
+    --color-elevation-1-light: rgb(255, 255, 255);
+    --color-elevation-2-light: rgb(255, 255, 255);
+    --color-elevation-3-light: rgb(255, 255, 255);
+    --color-elevation-4-light: rgb(255, 255, 255);
+    --color-elevation-5-light: rgb(255, 255, 255);
+
+    --color-surfaceDisabled-light: rgba(22, 22, 26, 0.12);
+    --color-onSurfaceDisabled-light: rgba(22, 22, 26, 0.38);
+    --color-backdrop-light: rgba(28, 28, 33, 0.32);
+
+    /* Material translúcido — a cor base de cada camada de vidro. */
+    --material-chrome-light: rgba(246, 246, 248, 0.72);
+    --material-sheet-light: rgba(255, 255, 255, 0.82);
+    --material-control-light: rgba(255, 255, 255, 0.64);
+    --material-edge-light: rgba(255, 255, 255, 0.85);
+
+    /* ---------- dark ---------- */
+    --color-primary-dark: rgb(126, 224, 132);
+    --color-onPrimary-dark: rgb(0, 46, 12);
+    --color-primaryContainer-dark: rgb(0, 78, 24);
+    --color-onPrimaryContainer-dark: rgb(170, 249, 168);
+    --color-secondary-dark: rgb(190, 190, 200);
+    --color-onSecondary-dark: rgb(32, 32, 38);
+    --color-secondaryContainer-dark: rgb(42, 42, 49);
+    --color-onSecondaryContainer-dark: rgb(226, 226, 232);
+    --color-tertiary-dark: rgb(160, 190, 208);
+    --color-onTertiary-dark: rgb(12, 34, 46);
+    --color-tertiaryContainer-dark: rgb(34, 58, 74);
+    --color-onTertiaryContainer-dark: rgb(206, 228, 242);
     --color-error-dark: rgb(255, 180, 171);
     --color-onError-dark: rgb(105, 0, 5);
-    --color-errorContainer-dark: rgb(147, 0, 10);
-    --color-onErrorContainer-dark: rgb(255, 180, 171);
-    --color-success-dark: rgb(130, 219, 126);
-    --color-onSuccess-dark: rgb(0, 57, 10);
-    --color-successContainer-dark: rgb(0, 83, 18);
-    --color-onSuccessContainer-dark: rgb(157, 248, 152);
-    --color-warning-dark: rgb(248, 189, 42);
-    --color-onWarning-dark: rgb(64, 45, 0);
-    --color-warningContainer-dark: rgb(92, 67, 0);
-    --color-onWarningContainer-dark: rgb(255, 223, 160);
-    --color-background-dark: rgb(26, 28, 25);
-    --color-onBackground-dark: rgb(226, 227, 221);
-    --color-surface-dark: rgb(26, 28, 25);
-    --color-onSurface-dark: rgb(226, 227, 221);
-    --color-surfaceVariant-dark: rgb(66, 73, 64);
-    --color-onSurfaceVariant-dark: rgb(194, 201, 189);
-    --color-outline-dark: rgb(140, 147, 136);
-    --color-outlineVariant-dark: rgb(66, 73, 64);
+    --color-errorContainer-dark: rgb(120, 22, 22);
+    --color-onErrorContainer-dark: rgb(255, 218, 214);
+    --color-success-dark: rgb(126, 224, 132);
+    --color-onSuccess-dark: rgb(0, 46, 12);
+    --color-successContainer-dark: rgb(16, 74, 30);
+    --color-onSuccessContainer-dark: rgb(170, 249, 168);
+    --color-warning-dark: rgb(248, 196, 82);
+    --color-onWarning-dark: rgb(54, 38, 0);
+    --color-warningContainer-dark: rgb(82, 60, 4);
+    --color-onWarningContainer-dark: rgb(255, 232, 178);
+
+    --color-background-dark: rgb(10, 10, 12);
+    --color-onBackground-dark: rgb(242, 242, 245);
+    --color-surface-dark: rgb(10, 10, 12);
+    --color-onSurface-dark: rgb(242, 242, 245);
+    --color-surfaceVariant-dark: rgb(28, 28, 33);
+    --color-onSurfaceVariant-dark: rgb(163, 163, 174);
+    --color-outline-dark: rgb(66, 66, 75);
+    --color-outlineVariant-dark: rgb(38, 38, 44);
     --color-shadow-dark: rgb(0, 0, 0);
     --color-scrim-dark: rgb(0, 0, 0);
-    --color-inverseSurface-dark: rgb(226, 227, 221);
-    --color-inverseOnSurface-dark: rgb(47, 49, 45);
-    --color-inversePrimary-dark: rgb(16, 109, 32);
+    --color-inverseSurface-dark: rgb(242, 242, 245);
+    --color-inverseOnSurface-dark: rgb(26, 26, 31);
+    --color-inversePrimary-dark: rgb(18, 116, 38);
+
     --color-elevation-0-dark: transparent;
-    --color-elevation-1-dark: rgb(31, 38, 30);
-    --color-elevation-2-dark: rgb(34, 43, 33);
-    --color-elevation-3-dark: rgb(37, 49, 36);
-    --color-elevation-4-dark: rgb(39, 51, 37);
-    --color-elevation-5-dark: rgb(41, 55, 39);
-    --color-surfaceDisabled-dark: rgba(226, 227, 221, 0.12);
-    --color-onSurfaceDisabled-dark: rgba(226, 227, 221, 0.38);
-    --color-backdrop-dark: rgba(44, 50, 42, 0.4);
+    --color-elevation-1-dark: rgb(20, 20, 24);
+    --color-elevation-2-dark: rgb(26, 26, 31);
+    --color-elevation-3-dark: rgb(32, 32, 38);
+    --color-elevation-4-dark: rgb(38, 38, 45);
+    --color-elevation-5-dark: rgb(44, 44, 52);
+
+    --color-surfaceDisabled-dark: rgba(242, 242, 245, 0.12);
+    --color-onSurfaceDisabled-dark: rgba(242, 242, 245, 0.38);
+    --color-backdrop-dark: rgba(6, 6, 8, 0.56);
+
+    --material-chrome-dark: rgba(14, 14, 17, 0.68);
+    --material-sheet-dark: rgba(24, 24, 29, 0.78);
+    --material-control-dark: rgba(38, 38, 45, 0.56);
+    --material-edge-dark: rgba(255, 255, 255, 0.10);
 }
 
 @theme inline {
@@ -111,7 +138,7 @@
     --color-company-maglog: #028297;
     --color-company-csj: #0D707F;
     --color-company-sbs: #D10A10;
-    --color-company-ux: #000000;
+    --color-company-ux: #2B2B2B;
     --color-company-comando: #45366F;
     --color-company-legiao: #EC252D;
 
@@ -166,7 +193,74 @@
     --font-roboto: var(--font-roboto);
 }
 
+/* ==========================================================================
+   Tipografia — tracking e leading são específicos por tamanho.
+   Texto grande pede tracking negativo; texto pequeno pede tracking
+   levemente positivo. Nunca um único letter-spacing para toda a escala.
+   ========================================================================== */
+
+@theme {
+    --text-display: clamp(2.75rem, 1.6rem + 5.6vw, 5.5rem);
+    --text-display--line-height: 1.02;
+    --text-display--letter-spacing: -0.035em;
+    --text-display--font-weight: 600;
+
+    --text-title-lg: clamp(1.875rem, 1.35rem + 2.2vw, 2.75rem);
+    --text-title-lg--line-height: 1.08;
+    --text-title-lg--letter-spacing: -0.026em;
+    --text-title-lg--font-weight: 600;
+
+    --text-title: clamp(1.375rem, 1.15rem + 0.95vw, 1.75rem);
+    --text-title--line-height: 1.16;
+    --text-title--letter-spacing: -0.02em;
+    --text-title--font-weight: 600;
+
+    --text-headline: 1.25rem;
+    --text-headline--line-height: 1.3;
+    --text-headline--letter-spacing: -0.013em;
+    --text-headline--font-weight: 500;
+
+    --text-body-lg: 1.125rem;
+    --text-body-lg--line-height: 1.55;
+    --text-body-lg--letter-spacing: -0.005em;
+
+    --text-body: 1rem;
+    --text-body--line-height: 1.6;
+    --text-body--letter-spacing: 0em;
+
+    --text-footnote: 0.875rem;
+    --text-footnote--line-height: 1.5;
+    --text-footnote--letter-spacing: 0.004em;
+
+    --text-caption: 0.75rem;
+    --text-caption--line-height: 1.42;
+    --text-caption--letter-spacing: 0.016em;
+
+    --text-overline: 0.75rem;
+    --text-overline--line-height: 1.2;
+    --text-overline--letter-spacing: 0.09em;
+    --text-overline--font-weight: 600;
+}
+
+/* ==========================================================================
+   Tokens de movimento e profundidade
+   ========================================================================== */
+
+:root {
+    /* Profundidade. Superfície maior lê como mais espessa: a sombra cresce
+       junto com o blur do material correspondente. */
+    --shadow-control: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05), 0 6px 20px rgba(0, 0, 0, 0.08);
+    --shadow-chrome: 0 1px 1px rgba(0, 0, 0, 0.04), 0 8px 28px rgba(0, 0, 0, 0.10);
+    --shadow-sheet: 0 2px 4px rgba(0, 0, 0, 0.08), 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
 [data-theme='dark'] {
+    --shadow-control: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.45), 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-chrome: 0 1px 1px rgba(0, 0, 0, 0.5), 0 10px 32px rgba(0, 0, 0, 0.45);
+    --shadow-sheet: 0 2px 6px rgba(0, 0, 0, 0.6), 0 28px 80px rgba(0, 0, 0, 0.7);
+
     --color-primary-base: var(--color-primary-dark);
     --color-onPrimary-base: var(--color-onPrimary-dark);
     --color-primaryContainer-base: var(--color-primaryContainer-dark);
@@ -213,6 +307,11 @@
     --color-surfaceDisabled-base: var(--color-surfaceDisabled-dark);
     --color-onSurfaceDisabled-base: var(--color-onSurfaceDisabled-dark);
     --color-backdrop-base: var(--color-backdrop-dark);
+
+    --material-chrome: var(--material-chrome-dark);
+    --material-sheet: var(--material-sheet-dark);
+    --material-control: var(--material-control-dark);
+    --material-edge: var(--material-edge-dark);
 }
 
 [data-theme='light'] {
@@ -262,20 +361,150 @@
     --color-surfaceDisabled-base: var(--color-surfaceDisabled-light);
     --color-onSurfaceDisabled-base: var(--color-onSurfaceDisabled-light);
     --color-backdrop-base: var(--color-backdrop-light);
+
+    --material-chrome: var(--material-chrome-light);
+    --material-sheet: var(--material-sheet-light);
+    --material-control: var(--material-control-light);
+    --material-edge: var(--material-edge-light);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+    font-optical-sizing: auto;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+}
+
+/* Nada de seleção acidental no meio de um gesto de arrastar. */
+.dragging,
+.dragging * {
+    user-select: none !important;
 }
 
 .main-scrollbar {
-    @apply scrollbar-thin scrollbar-thumb-onSurface/20 scrollbar-track-surface;
+    @apply scrollbar-thin scrollbar-thumb-onSurface/20 scrollbar-track-transparent;
 }
 
-.default-click-animation {
-    @apply cursor-pointer transition-all;
-}
- 
-.glass-card {
-    @apply backdrop-blur-md shadow-[inset_0_0_14px_0_rgba(255,255,255,0.20)];
+/* ==========================================================================
+   Materiais — camadas translúcidas. Superfície maior lê como mais espessa:
+   blur e sombra crescem juntos. Nunca empilhar material claro sobre claro.
+   ========================================================================== */
+
+/* O blur vai por utilitário do Tailwind, não por `backdrop-filter` escrito à
+   mão: o Lightning CSS reescreve a propriedade crua para a forma -webkit- e
+   descarta a padrão, e aí o efeito some no Chrome. */
+
+.material-control {
+    @apply backdrop-blur-md backdrop-saturate-[1.8];
+    background-color: var(--material-control);
+    box-shadow: var(--shadow-control);
 }
 
-.image-rodrigo {
-    background-image: url('/images/rodrigo.jpeg');
+.material-chrome {
+    @apply backdrop-blur-xl backdrop-saturate-[1.8];
+    background-color: var(--material-chrome);
+    box-shadow: var(--shadow-chrome);
+}
+
+.material-sheet {
+    @apply backdrop-blur-2xl backdrop-saturate-[1.8];
+    background-color: var(--material-sheet);
+    box-shadow: var(--shadow-sheet);
+}
+
+/* Aresta superior clara: a luz batendo na quina do material. */
+.material-edge {
+    border-top: 1px solid var(--material-edge);
+}
+
+.shadow-card {
+    box-shadow: var(--shadow-card);
+}
+
+/* Vibrância: sobre vidro, texto secundário ganha peso e um respiro de
+   tracking em vez de virar cinza chapado, que perde legibilidade. */
+.vibrant-secondary {
+    color: color-mix(in srgb, var(--color-onSurface-base) 72%, transparent);
+    font-weight: 500;
+    letter-spacing: 0.006em;
+}
+
+/* ==========================================================================
+   Acessibilidade — menos movimento, menos transparência, mais contraste.
+   Movimento reduzido não é ausência de feedback: é o equivalente sem
+   deslocamento vestibular. Opacidade e cor continuam.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    /* Mantém transições de cor/opacidade; zera as de transform e filtro. */
+    *,
+    *::before,
+    *::after {
+        transition-property: opacity, color, background-color, border-color, fill, stroke;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .material-control,
+    .material-chrome,
+    .material-sheet {
+        transition-property: opacity, background-color;
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .material-control {
+        @apply backdrop-filter-none;
+        background-color: var(--color-elevation-2-base);
+    }
+
+    .material-chrome {
+        @apply backdrop-filter-none;
+        background-color: var(--color-surface-base);
+    }
+
+    .material-sheet {
+        @apply backdrop-filter-none;
+        background-color: var(--color-elevation-1-base);
+    }
+
+    .vibrant-secondary {
+        color: var(--color-onSurfaceVariant-base);
+    }
+}
+
+@media (prefers-contrast: more) {
+    .material-control,
+    .material-chrome,
+    .material-sheet {
+        @apply backdrop-filter-none;
+        border: 1px solid var(--color-onSurface-base);
+    }
+
+    .material-control {
+        background-color: var(--color-elevation-2-base);
+    }
+
+    .material-chrome {
+        background-color: var(--color-surface-base);
+    }
+
+    .material-sheet {
+        background-color: var(--color-elevation-1-base);
+    }
+
+    .vibrant-secondary {
+        color: var(--color-onSurface-base);
+    }
 }

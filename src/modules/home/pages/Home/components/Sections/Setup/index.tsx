@@ -7,10 +7,11 @@ export default function HomeSetup() {
     return(
 
         <>
-            <Section>
+            <Section id='home-setup-section'>
                 <SectionTitle
                     label='Setup'
-                    title='Meu Equipamento'
+                    title='Meu equipamento'
+                    description='O que fica na mesa quando é trabalho e quando é jogo.'
                 />
 
                 <SetupSwithView />

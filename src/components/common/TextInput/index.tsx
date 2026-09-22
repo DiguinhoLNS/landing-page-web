@@ -10,6 +10,7 @@ interface TextInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement
     errorText?: string
     error?: boolean
     containerClassName?: string
+    labelBackground?: string
 }
 
 export default function TextInput({
@@ -22,6 +23,7 @@ export default function TextInput({
     disabled = false,
     className,
     containerClassName,
+    labelBackground = 'bg-surface',
     ...props
 }: TextInputProps) {
 
@@ -53,7 +55,7 @@ export default function TextInput({
                         placeholder=' '
                         className={clsx(
                             'peer',
-                            'w-full h-14 px-4 py-2 rounded border bg-transparent outline-none transition-colors',
+                            'w-full h-14 px-4 py-2 rounded-2xl border bg-transparent outline-none transition-colors',
                             'text-base leading-6',
                             'text-onSurface placeholder:text-transparent',
                             shouldShowErrorState ? 'border-error focus:border-error focus:border-2' : 'border-outline focus:border-primary focus:border-2',
@@ -88,7 +90,8 @@ export default function TextInput({
                     <span
                         className={clsx(
                             'absolute left-3 top-0 -translate-y-1/2',
-                            'px-1 bg-surface pointer-events-none transition-all',
+                            'px-1 pointer-events-none transition-all',
+                            labelBackground,
                             'text-xs',
                             shouldShowErrorState ? 'text-error peer-focus:text-error' : 'text-onSurfaceVariant peer-focus:text-primary',
                             'peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base',

@@ -6,16 +6,20 @@ interface ClickOverlayProps {
 
 export default function ClickOverlay({ disabled }: ClickOverlayProps) {
 
+    if (disabled) return null
+
     return(
 
         <>
             <div
+                aria-hidden
                 className={clsx(
-                    'z-1 absolute inset-0',
-                    'bg-current opacity-0 transition-opacity',
-                    'hover:opacity-[0.08] focus-visible:opacity-[0.10] active:opacity-[0.10]',
-                    !disabled && 'cursor-pointer',
-                    disabled && 'pointer-events-none'
+                    'z-1 absolute inset-0 pointer-events-none',
+                    'bg-current opacity-0',
+                    'transition-opacity duration-100 ease-out',
+                    'group-hover:opacity-[0.08]',
+                    'group-focus-visible:opacity-[0.10]',
+                    'group-active:opacity-[0.12]'
                 )}
             />
         </>

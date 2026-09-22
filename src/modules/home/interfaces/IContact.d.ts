@@ -3,4 +3,5 @@ export interface IContact {
     label: string
     displayValue: string
     link: string
+    icon: string
 }
