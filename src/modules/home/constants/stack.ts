@@ -1,10 +1,10 @@
 import {
     siHtml5, siCss, siJavascript, siTypescript, siPhp, siMysql,
-    siReact, siNextdotjs, siVite, siAngular, siFramer, siReactquery, siNodedotjs,
+    siReact, siExpo, siNextdotjs, siVite, siAngular, siFramer, siReactquery, siNodedotjs,
     siExpress, siNestjs, siRedux, siJest,
     siPostgresql, siFirebase,
     siSass, siTailwindcss, siStyledcomponents, siMui, siFontawesome,
-    siFigma, siStorybook, siGit, siGithub, siGithubactions, siAndroidstudio, siXcode,
+    siFigma, siStorybook, siChromatic, siGit, siGithub, siGithubactions, siAndroidstudio, siXcode,
     siInsomnia, siNpm, siJira, siConfluence, siTrello, siSentry, siNewrelic
 } from 'simple-icons'
 import type { IStackGroup } from '@/modules/home/interfaces/IStackItem'
@@ -31,17 +31,18 @@ const stack: IStackGroup[] = [
         items: [
             { name: 'React', color: '#61DAFB', iconPath: siReact.path },
             { name: 'React Native', color: '#61DAFB', iconPath: siReact.path },
+            { name: 'Expo', color: '#1C2024', iconPath: siExpo.path },
             { name: 'Next.js', color: '#000000', iconPath: siNextdotjs.path },
             { name: 'Vite', color: '#646CFF', iconPath: siVite.path },
             { name: 'Angular', color: '#DD0031', iconPath: siAngular.path },
             { name: 'Framer Motion', color: '#0055FF', iconPath: siFramer.path },
-            { name: 'Tanstack Query', color: '#FF4154', iconPath: siReactquery.path },
+            { name: 'TanStack Query', color: '#FF4154', iconPath: siReactquery.path },
+            { name: 'Redux', color: '#764ABC', iconPath: siRedux.path },
+            { name: 'Zustand', color: '#000000', monogram: 'Z' },
+            { name: 'Jest', color: '#C21325', iconPath: siJest.path },
             { name: 'Node.js', color: '#339933', iconPath: siNodedotjs.path },
             { name: 'Express', color: '#000000', iconPath: siExpress.path },
             { name: 'NestJS', color: '#E0234E', iconPath: siNestjs.path },
-            { name: 'Redux', color: '#764ABC', iconPath: siRedux.path },
-            { name: 'Zustand', color: '#000000', monogram: 'Z' },
-            { name: 'Jest', color: '#C21325', iconPath: siJest.path }
         ]
     },
     {
@@ -67,6 +68,7 @@ const stack: IStackGroup[] = [
         items: [
             { name: 'Figma', color: '#F24E1E', iconPath: siFigma.path },
             { name: 'Storybook', color: '#FF4785', iconPath: siStorybook.path },
+            { name: 'Chromatic', color: '#FC521F', iconPath: siChromatic.path },
             { name: 'Git', color: '#F05032', iconPath: siGit.path },
             { name: 'GitHub', color: '#181717', iconPath: siGithub.path },
             { name: 'GitHub Actions', color: '#2088FF', iconPath: siGithubactions.path },
