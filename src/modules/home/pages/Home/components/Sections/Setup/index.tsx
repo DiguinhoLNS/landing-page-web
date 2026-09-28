@@ -11,7 +11,7 @@ export default function HomeSetup() {
                 <SectionTitle
                     label='Setup'
                     title='Meu equipamento'
-                    description='O que fica na mesa quando é trabalho e quando é jogo.'
+                    description='As ferramentas que me acompanham no trabalho e no lazer.'
                 />
 
                 <SetupSwithView />

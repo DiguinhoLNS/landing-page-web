@@ -1,7 +1,7 @@
 import {
     siHtml5, siCss, siJavascript, siTypescript, siPhp, siMysql,
     siReact, siExpo, siNextdotjs, siVite, siAngular, siFramer, siReactquery, siNodedotjs,
-    siExpress, siNestjs, siRedux, siJest,
+    siExpress, siNestjs, siRedux, siJest, siTestinglibrary,
     siPostgresql, siFirebase,
     siSass, siTailwindcss, siStyledcomponents, siMui, siFontawesome,
     siFigma, siStorybook, siChromatic, siGit, siGithub, siGithubactions, siAndroidstudio, siXcode,
@@ -9,10 +9,6 @@ import {
 } from 'simple-icons'
 import type { IStackGroup } from '@/modules/home/interfaces/IStackItem'
 
-/**
- * Espelha o `tech_stack` do README do GitHub. As cores são as dos badges de lá;
- * marcas que o simple-icons não publica (Microsoft, Zustand, Monday...) viram monograma.
- */
 const stack: IStackGroup[] = [
     {
         title: 'Linguagens',
@@ -40,6 +36,7 @@ const stack: IStackGroup[] = [
             { name: 'Redux', color: '#764ABC', iconPath: siRedux.path },
             { name: 'Zustand', color: '#000000', monogram: 'Z' },
             { name: 'Jest', color: '#C21325', iconPath: siJest.path },
+            { name: 'React Testing Library', color: '#E33332', iconPath: siTestinglibrary.path },
             { name: 'Node.js', color: '#339933', iconPath: siNodedotjs.path },
             { name: 'Express', color: '#000000', iconPath: siExpress.path },
             { name: 'NestJS', color: '#E0234E', iconPath: siNestjs.path },
