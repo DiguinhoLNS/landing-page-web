@@ -1,7 +1,7 @@
 import clsx from 'clsx'
+import Reveal from '@/components/common/Reveal'
 import Section from '@/components/page/Section'
 import SectionTitle from '@/components/common/SectionTitle'
-import Reveal from '@/components/common/Reveal'
 import ContantForm from './components/Form'
 import ContactInfo from './components/Info'
 

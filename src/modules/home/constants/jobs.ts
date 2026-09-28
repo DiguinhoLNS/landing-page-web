@@ -15,7 +15,7 @@ const jobs: IJob[] = [
         title: 'Hardwork Medicina',
         position: 'Front-end Developer',
         period: 'MAR 2025 - Presente',
-        description: 'Atuo na evolução de <strong>plataformas educacionais</strong>, desenvolvendo interfaces <strong>intuitivas, performáticas</strong> e centradas na <strong>experiência do usuário</strong>. Participo da <strong>refatoração de componentes</strong>, modernização da base de código e integração de <strong>testes automatizados</strong>, contribuindo para a <strong>estabilidade, escalabilidade</strong> e melhoria contínua do fluxo <strong>front-end</strong>.',
+        description: 'Atuo em <strong>plataformas educacionais</strong> usadas por <strong>milhares de alunos de medicina</strong> em todo o Brasil. Criei a nova <strong>arquitetura de projetos</strong>, hoje padrão da empresa, que <strong>reduziu o tempo de deploy em cerca de 70%</strong>. Construí do zero o <strong>design system</strong> com <strong>Storybook, Tailwind e Chromatic</strong> e liderei a reconstrução do <strong>aplicativo em Expo</strong>, hub central dos produtos do aluno. Também reestruturei a <strong>autenticação</strong> com tokens de acesso e refresh via cookies.',
     },
 ]
 
