@@ -6,10 +6,9 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Button from '@/components/common/Button'
 import Icon from '@/components/common/Icon'
 import useIsClient from '@/hooks/useIsClient'
+import { COOKIES_SECTION_ID, PRIVACY_POLICY_PATH } from '@/modules/legal/constants/routes'
 import useCookieConsentStore from '@/stores/cookieConsent'
 import springs, { crossFade } from '@/utils/motion/springs'
-
-export const COOKIE_POLICY_PATH = '/politica-de-cookies'
 
 export default function CookieBanner() {
 
@@ -65,13 +64,13 @@ export default function CookieBanner() {
                                     usado e melhorar a sua experiência. Você pode aceitar ou recusar os
                                     cookies de análise.{' '}
                                     <Link
-                                        href={COOKIE_POLICY_PATH}
+                                        href={`${PRIVACY_POLICY_PATH}#${COOKIES_SECTION_ID}`}
                                         className={clsx(
                                             'text-primary underline underline-offset-2 rounded-sm',
                                             'outline-none focus-visible:ring-2 focus-visible:ring-primary'
                                         )}
                                     >
-                                        Política de cookies
+                                        Política de privacidade
                                     </Link>
                                 </p>
                             </div>

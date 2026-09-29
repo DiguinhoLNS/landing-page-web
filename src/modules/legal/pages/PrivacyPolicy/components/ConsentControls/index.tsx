@@ -12,7 +12,7 @@ const statusChip: Record<TCookieConsentStatus, { label: string, variant: 'defaul
     denied: { label: 'Recusados', variant: 'error' }
 }
 
-export default function CookiePolicyConsentControls() {
+export default function PrivacyPolicyConsentControls() {
 
     const isClient = useIsClient()
 

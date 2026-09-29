@@ -1,6 +1,6 @@
 import type { ICookieGroup } from '../interfaces/ICookieGroup'
 
-export const cookiePolicyUpdatedAt = '29 de setembro de 2026'
+export const privacyPolicyUpdatedAt = '29 de setembro de 2026'
 
 const cookieGroups: ICookieGroup[] = [
     {

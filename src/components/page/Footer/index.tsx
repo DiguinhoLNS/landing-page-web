@@ -4,7 +4,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Icon from '@/components/common/Icon'
-import { COOKIE_POLICY_PATH } from '@/components/app/CookieBanner'
+import { PRIVACY_POLICY_PATH } from '@/modules/legal/constants/routes'
 import usePressable from '@/hooks/usePressable'
 import Container from '../Container'
 
@@ -36,14 +36,14 @@ export default function Footer() {
                         </p>
 
                         <Link
-                            href={COOKIE_POLICY_PATH}
+                            href={PRIVACY_POLICY_PATH}
                             className={clsx(
                                 'text-caption text-onSurfaceVariant underline underline-offset-2 rounded-sm',
                                 'outline-none focus-visible:ring-2 focus-visible:ring-primary',
                                 'hover:text-onSurface transition-colors duration-150'
                             )}
                         >
-                            Política de cookies
+                            Política de privacidade
                         </Link>
                     </div>
 
