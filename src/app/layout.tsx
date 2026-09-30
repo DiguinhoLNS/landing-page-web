@@ -1,14 +1,13 @@
 import clsx from 'clsx'
-import Clarity from '@microsoft/clarity'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@wrksz/themes/next'
 import { Google_Sans, Roboto } from 'next/font/google'
 import AppClientProvider from '@/components/app/ClientProvider'
+import AppClarity from '@/components/app/Clarity'
+import CookieBanner from '@/components/app/CookieBanner'
 import 'material-symbols'
 import './globals.css'
-
-const projectId = process.env.NEXT_PUBLIC_CLARITY_ID
 
 const roboto = Roboto({
     weight: ['400', '500', '600', '700'],
@@ -32,8 +31,6 @@ export const metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 
-    Clarity.init(projectId!)
-
     return (
         <>
             <html
@@ -50,6 +47,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                         <AppClientProvider>
                             {children}
 
+                            <CookieBanner />
+
+                            <AppClarity />
                             <Analytics />
                             <SpeedInsights />
                         </AppClientProvider>

@@ -1,11 +1,16 @@
 'use client'
 
+import Link from 'next/link'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Icon from '@/components/common/Icon'
+import { PRIVACY_POLICY_PATH } from '@/modules/legal/constants/routes'
 import usePressable from '@/hooks/usePressable'
-import scrollToView from '@/utils/scrollToView'
 import Container from '../Container'
+
+const scrollToTop = () => {
+    document.getElementById('app-scroll')?.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
 export default function Footer() {
 
@@ -29,6 +34,17 @@ export default function Footer() {
                         <p className={clsx('text-caption text-onSurfaceVariant text-center', 'md:text-left')}>
                             © {new Date().getFullYear()} — Desenvolvido por Rodrigo Santos.
                         </p>
+
+                        <Link
+                            href={PRIVACY_POLICY_PATH}
+                            className={clsx(
+                                'text-caption text-onSurfaceVariant underline underline-offset-2 rounded-sm',
+                                'outline-none focus-visible:ring-2 focus-visible:ring-primary',
+                                'hover:text-onSurface transition-colors duration-150'
+                            )}
+                        >
+                            Política de privacidade
+                        </Link>
                     </div>
 
                     <motion.button
@@ -40,7 +56,7 @@ export default function Footer() {
                             'outline-none focus-visible:ring-2 focus-visible:ring-primary',
                             'hover:text-onSurface transition-colors duration-150'
                         )}
-                        onClick={() => scrollToView('home-hero-section')}
+                        onClick={scrollToTop}
                     >
                         <span className={clsx('text-footnote font-medium')}>
                             Voltar ao topo

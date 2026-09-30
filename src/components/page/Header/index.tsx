@@ -15,7 +15,11 @@ import Container from '../Container'
 
 const navSections = homeSections.filter(section => section.id !== 'home-hero-section')
 
-export default function Header() {
+interface HeaderProps {
+    showNav?: boolean
+}
+
+export default function Header({ showNav = true }: HeaderProps) {
 
     const isClient = useIsClient()
     const reducedMotion = useReducedMotion()
@@ -101,7 +105,7 @@ export default function Header() {
                         </p>
                     </Link>
 
-                    <nav className={clsx('col-start-2 hidden items-center gap-0.5', 'md:flex')}>
+                    <nav className={clsx('col-start-2 hidden items-center gap-0.5', showNav && 'md:flex')}>
                         {navSections.map(section => {
                             const active = activeId === section.id
 
