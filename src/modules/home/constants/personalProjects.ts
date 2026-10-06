@@ -24,6 +24,14 @@ const personalProjects: IPersonalProject[] = [
         tags: ['Next.js', 'TypeScript', 'Firebase']
     },
     {
+        icon: 'widgets',
+        link: 'https://test-next-shadcn-web.vercel.app/dashboard',
+        title: 'Shadcn',
+        description: 'Aplicação de referência com shadcn/ui, reunindo dashboard com gráficos, CRUD de tarefas, galeria de componentes e troca de tema.',
+        status: 'concluded',
+        tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui']
+    },
+    {
         icon: 'savings',
         repository: 'https://github.com/DiguinhoLNS/quem-me-deve-app-v2',
         title: 'Quem me Deve Mobile',
