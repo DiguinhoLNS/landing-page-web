@@ -9,6 +9,13 @@ const personalProjects: IPersonalProject[] = [
         tags: ['React', 'TypeScript', 'Storybook', 'Jest', 'NPM']
     },
     {
+        icon: 'newspaper',
+        title: 'Project News',
+        description: 'Pipeline de notícias que extrai conteúdo de links, gera matérias com IA e publica automaticamente no WordPress, com dashboard para acompanhar e reprocessar os jobs.',
+        status: 'development',
+        tags: ['Next.js', 'NestJS', 'PostgreSQL', 'BullMQ', 'Gemini', 'WordPress']
+    },
+    {
         icon: 'savings',
         title: 'Quem me Deve Web',
         description: 'Aplicação web para gerenciar cobranças pessoais, acompanhar devedores e gerar pagamentos via Pix.',
