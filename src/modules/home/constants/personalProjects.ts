@@ -10,9 +10,10 @@ const personalProjects: IPersonalProject[] = [
     },
     {
         icon: 'newspaper',
-        title: 'Project News',
+        repository: 'https://github.com/DiguinhoLNS/project-news-dashboard',
+        title: 'News Dashboard',
         description: 'Pipeline de notícias que extrai conteúdo de links, gera matérias com IA e publica automaticamente no WordPress, com dashboard para acompanhar e reprocessar os jobs.',
-        status: 'development',
+        status: 'concluded',
         tags: ['Next.js', 'NestJS', 'PostgreSQL', 'BullMQ', 'Gemini', 'WordPress']
     },
     {
