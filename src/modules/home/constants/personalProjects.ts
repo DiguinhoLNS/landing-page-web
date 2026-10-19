@@ -9,6 +9,14 @@ const personalProjects: IPersonalProject[] = [
         tags: ['React', 'TypeScript', 'Storybook', 'Jest', 'NPM']
     },
     {
+        icon: 'hub',
+        link: 'https://project-react-microfrontend-host.vercel.app',
+        title: 'React Microfrontend',
+        description: 'Shell em Next.js que carrega microfrontends React em runtime, com contrato de montagem versionado, troca de tema e log dos eventos emitidos pelos remotes.',
+        status: 'concluded',
+        tags: ['Next.js', 'React', 'TypeScript', 'Microfrontends', 'shadcn/ui', 'Zustand']
+    },
+    {
         icon: 'newspaper',
         repository: 'https://github.com/DiguinhoLNS/project-news-dashboard',
         title: 'News Dashboard',
