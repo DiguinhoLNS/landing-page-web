@@ -1,8 +1,11 @@
+import type { TJobVariant } from "./TJobVariant"
+
 export interface IJob {
     type: string
-    link: string
+    link?: string
     title: string
     position: string
     description: string
     period: string
+    variant?: TJobVariant
 }
