@@ -6,9 +6,11 @@
 @custom-variant dark (&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *));
 
 /* ==========================================================================
-   Paleta — superfícies neutras, verde reservado para acento e estados.
+   Paleta — superfícies neutras, cor reservada para acento e estados.
    Os nomes dos tokens seguem o contrato do @wrksz/themes; só os valores
    mudaram: as rampas de surface/outline/elevation foram neutralizadas.
+   Só a família primary vem da paleta ativa, mais abaixo; todo o resto é
+   compartilhado entre as paletas.
    ========================================================================== */
 
 :root {
@@ -16,10 +18,6 @@
     height: 100svh;
 
     /* ---------- light ---------- */
-    --color-primary-light: rgb(18, 116, 38);
-    --color-onPrimary-light: rgb(255, 255, 255);
-    --color-primaryContainer-light: rgb(206, 243, 202);
-    --color-onPrimaryContainer-light: rgb(0, 40, 8);
     --color-secondary-light: rgb(84, 84, 94);
     --color-onSecondary-light: rgb(255, 255, 255);
     --color-secondaryContainer-light: rgb(232, 232, 238);
@@ -53,7 +51,6 @@
     --color-scrim-light: rgb(0, 0, 0);
     --color-inverseSurface-light: rgb(30, 30, 35);
     --color-inverseOnSurface-light: rgb(244, 244, 247);
-    --color-inversePrimary-light: rgb(126, 224, 132);
 
     /* Em light a profundidade vem da sombra, não do tom: superfícies
        elevadas são brancas e a hierarquia é lida pela sombra. */
@@ -75,10 +72,6 @@
     --material-edge-light: rgba(255, 255, 255, 0.85);
 
     /* ---------- dark ---------- */
-    --color-primary-dark: rgb(126, 224, 132);
-    --color-onPrimary-dark: rgb(0, 46, 12);
-    --color-primaryContainer-dark: rgb(0, 78, 24);
-    --color-onPrimaryContainer-dark: rgb(170, 249, 168);
     --color-secondary-dark: rgb(190, 190, 200);
     --color-onSecondary-dark: rgb(32, 32, 38);
     --color-secondaryContainer-dark: rgb(42, 42, 49);
@@ -112,7 +105,6 @@
     --color-scrim-dark: rgb(0, 0, 0);
     --color-inverseSurface-dark: rgb(242, 242, 245);
     --color-inverseOnSurface-dark: rgb(26, 26, 31);
-    --color-inversePrimary-dark: rgb(18, 116, 38);
 
     --color-elevation-0-dark: transparent;
     --color-elevation-1-dark: rgb(20, 20, 24);
@@ -129,6 +121,44 @@
     --material-sheet-dark: rgba(24, 24, 29, 0.78);
     --material-control-dark: rgba(38, 38, 45, 0.56);
     --material-edge-dark: rgba(255, 255, 255, 0.10);
+}
+
+/* ==========================================================================
+   Paletas — trocadas via `data-palette` no <html>. Azul é a padrão e vale
+   também antes do script do provider rodar; verde é a paleta alternativa.
+   ========================================================================== */
+
+:root,
+[data-palette='blue'] {
+    /* ---------- light ---------- */
+    --color-primary-light: rgb(0, 91, 190);
+    --color-onPrimary-light: rgb(255, 255, 255);
+    --color-primaryContainer-light: rgb(215, 226, 255);
+    --color-onPrimaryContainer-light: rgb(0, 26, 64);
+    --color-inversePrimary-light: rgb(172, 199, 255);
+
+    /* ---------- dark ---------- */
+    --color-primary-dark: rgb(172, 199, 255);
+    --color-onPrimary-dark: rgb(0, 47, 103);
+    --color-primaryContainer-dark: rgb(0, 68, 145);
+    --color-onPrimaryContainer-dark: rgb(215, 226, 255);
+    --color-inversePrimary-dark: rgb(0, 91, 190);
+}
+
+[data-palette='green'] {
+    /* ---------- light ---------- */
+    --color-primary-light: rgb(18, 116, 38);
+    --color-onPrimary-light: rgb(255, 255, 255);
+    --color-primaryContainer-light: rgb(206, 243, 202);
+    --color-onPrimaryContainer-light: rgb(0, 40, 8);
+    --color-inversePrimary-light: rgb(126, 224, 132);
+
+    /* ---------- dark ---------- */
+    --color-primary-dark: rgb(126, 224, 132);
+    --color-onPrimary-dark: rgb(0, 46, 12);
+    --color-primaryContainer-dark: rgb(0, 78, 24);
+    --color-onPrimaryContainer-dark: rgb(170, 249, 168);
+    --color-inversePrimary-dark: rgb(18, 116, 38);
 }
 
 @theme inline {

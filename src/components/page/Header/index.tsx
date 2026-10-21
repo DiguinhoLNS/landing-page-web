@@ -3,12 +3,13 @@
 import { useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { motion, useMotionValue, useReducedMotion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
+import { motion, useMotionValue, useReducedMotion } from 'framer-motion'
 import ToggleThemeIconButton from '@/components/common/ToggleThemeIconButton'
-import useSectionNav from '@/hooks/useSectionNav'
+import TogglePaletteIconButton from '@/components/common/TogglePaletteIconButton'
 import useIsClient from '@/hooks/useIsClient'
 import useMediaQuery from '@/hooks/useMediaQuery'
+import useSectionNav from '@/hooks/useSectionNav'
 import homeSections from '@/modules/home/constants/sections'
 import springs from '@/utils/motion/springs'
 import Container from '../Container'
@@ -145,6 +146,7 @@ export default function Header({ showNav = true }: HeaderProps) {
                     </nav>
 
                     <div className={clsx('col-start-3 flex justify-self-end')}>
+                        <TogglePaletteIconButton />
                         <ToggleThemeIconButton />
                     </div>
                 </Container>
