@@ -53,7 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                         <PaletteProvider>
                             <ThemeProvider
                                 attribute='data-theme'
-                                defaultTheme='dark'
+                                defaultTheme='system'
                                 disableTransitionOnChange
                             >
                                 <AppClientProvider>

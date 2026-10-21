@@ -5,6 +5,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import Typewriter from 'typewriter-effect'
 import { motion, useMotionValue, useReducedMotion } from 'framer-motion'
+import AppearanceMenu from '@/components/common/AppearanceMenu'
 import ToggleThemeIconButton from '@/components/common/ToggleThemeIconButton'
 import TogglePaletteIconButton from '@/components/common/TogglePaletteIconButton'
 import useIsClient from '@/hooks/useIsClient'
@@ -146,8 +147,14 @@ export default function Header({ showNav = true }: HeaderProps) {
                     </nav>
 
                     <div className={clsx('col-start-3 flex justify-self-end')}>
-                        <TogglePaletteIconButton />
-                        <ToggleThemeIconButton />
+                        <div className={clsx('hidden', 'md:flex')}>
+                            <TogglePaletteIconButton />
+                            <ToggleThemeIconButton />
+                        </div>
+
+                        <div className={clsx('md:hidden')}>
+                            <AppearanceMenu />
+                        </div>
                     </div>
                 </Container>
             </header>

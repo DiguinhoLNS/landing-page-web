@@ -161,6 +161,25 @@
     --color-inversePrimary-dark: rgb(18, 116, 38);
 }
 
+/* Prévia — um elemento com `data-palette` dentro da página mostra a família
+   primary daquela paleta, seja qual for a ativa. É o que pinta as amostras
+   do menu de aparência. No <html> o mapeamento vem do bloco de tema. */
+[data-theme='light'] [data-palette] {
+    --color-primary-base: var(--color-primary-light);
+    --color-onPrimary-base: var(--color-onPrimary-light);
+    --color-primaryContainer-base: var(--color-primaryContainer-light);
+    --color-onPrimaryContainer-base: var(--color-onPrimaryContainer-light);
+    --color-inversePrimary-base: var(--color-inversePrimary-light);
+}
+
+[data-theme='dark'] [data-palette] {
+    --color-primary-base: var(--color-primary-dark);
+    --color-onPrimary-base: var(--color-onPrimary-dark);
+    --color-primaryContainer-base: var(--color-primaryContainer-dark);
+    --color-onPrimaryContainer-base: var(--color-onPrimaryContainer-dark);
+    --color-inversePrimary-base: var(--color-inversePrimary-dark);
+}
+
 @theme inline {
     --color-company-alta: #0A55CF;
     --color-company-hwm: #0D0D0D;
