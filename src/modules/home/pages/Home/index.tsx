@@ -1,3 +1,4 @@
+import flags from '@/constants/flags'
 import HomeHero from './components/Sections/Hero'
 import HomeJobs from './components/Sections/Jobs'
 import HomeSetup from './components/Sections/Setup'
@@ -14,19 +15,19 @@ export default function Home() {
         <>
             <HomeHero />
 
-            <HomeJobs />
+            {flags.sections.jobs && <HomeJobs />}
 
-            <HomeStack />
+            {flags.sections.stack && <HomeStack />}
 
-            <HomeContributions />
+            {flags.sections.contributions && <HomeContributions />}
 
-            <HomeBusinessProjects />
+            {flags.sections.products && <HomeBusinessProjects />}
 
-            <HomePersonalProjects />
+            {flags.sections.projects && <HomePersonalProjects />}
 
-            <HomeSetup />
+            {flags.sections.setup && <HomeSetup />}
 
-            <HomeContact />
+            {flags.sections.contact && <HomeContact />}
         </>
 
     )

@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-
-export type TCookieConsentStatus = 'pending' | 'granted' | 'denied'
+import type { TCookieConsentStatus } from '@/modules/legal/interfaces/TCookieConsentStatus'
 
 interface CookieConsentState {
     status: TCookieConsentStatus

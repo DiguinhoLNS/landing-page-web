@@ -1,0 +1,1 @@
+export type TCookieConsentStatus = 'pending' | 'granted' | 'denied'

@@ -1,6 +1,5 @@
+import type { TChipVariant } from '@/components/common/Chip/types'
 import type { TProjectStatus } from '../interfaces/TProjectStatus'
-
-type TChipVariant = 'default' | 'success' | 'warning' | 'error'
 
 export const projectStatusLabel: Record<TProjectStatus, string> = {
     planned: 'Planejado',

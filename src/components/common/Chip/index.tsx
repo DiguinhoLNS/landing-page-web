@@ -1,15 +1,16 @@
 import clsx from 'clsx'
+import type { TChipVariant } from './types'
 
 interface ChipProps {
     label: string
-    variant?: 'default' | 'success' | 'warning' | 'error'
+    variant?: TChipVariant
     backgroundColor?: string
     textColor?: string
     dotColor?: string
     className?: string
 }
 
-const variantStyles: Record<string, string> = {
+const variantStyles: Record<TChipVariant, string> = {
     default: 'bg-surfaceVariant text-onSurfaceVariant',
     success: 'bg-successContainer text-onSuccessContainer',
     warning: 'bg-warningContainer text-onWarningContainer',
