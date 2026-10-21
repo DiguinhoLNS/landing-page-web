@@ -7,4 +7,9 @@ export const paletteLabel: Record<TPalette, string> = {
     green: 'Verde'
 }
 
+export const paletteFavicon: Record<TPalette, string> = {
+    blue: '/favicons/blue.ico',
+    green: '/favicons/green.ico'
+}
+
 export default palettes

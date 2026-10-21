@@ -4,6 +4,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@wrksz/themes/next'
 import { Google_Sans, Roboto } from 'next/font/google'
 import AppClarity from '@/components/app/Clarity'
+import AppFavicon from '@/components/app/Favicon'
 import CookieBanner from '@/components/app/CookieBanner'
 import PaletteProvider from '@/components/app/PaletteProvider'
 import AppClientProvider from '@/components/app/ClientProvider'
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
                                     <CookieBanner />
 
+                                    <AppFavicon />
                                     <AppClarity />
                                     <Analytics />
                                     <SpeedInsights />
