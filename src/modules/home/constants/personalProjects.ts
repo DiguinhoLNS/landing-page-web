@@ -11,6 +11,10 @@ const personalProjects: IPersonalProject[] = [
     {
         icon: 'hub',
         link: 'https://project-react-microfrontend-host.vercel.app',
+        repositories: [
+            { link: 'https://github.com/DiguinhoLNS/project-react-microfrontend-host', title: 'Host' },
+            { link: 'https://github.com/DiguinhoLNS/project-react-microfrontend-remote', title: 'Remote' }
+        ],
         title: 'React Microfrontend',
         description: 'Shell em Next.js que carrega microfrontends React em runtime, com contrato de montagem versionado, troca de tema e log dos eventos emitidos pelos remotes.',
         status: 'concluded',
@@ -18,7 +22,9 @@ const personalProjects: IPersonalProject[] = [
     },
     {
         icon: 'newspaper',
-        repository: 'https://github.com/DiguinhoLNS/project-news-dashboard',
+        repositories: [
+            { link: 'https://github.com/DiguinhoLNS/project-news-dashboard' }
+        ],
         title: 'News Dashboard',
         description: 'Pipeline de notícias que extrai conteúdo de links, gera matérias com IA e publica automaticamente no WordPress, com dashboard para acompanhar e reprocessar os jobs.',
         status: 'concluded',
@@ -33,7 +39,6 @@ const personalProjects: IPersonalProject[] = [
     },
     {
         icon: 'view_kanban',
-        link: 'https://project-board-web-ten.vercel.app',
         title: 'Board',
         description: 'Plataforma para gerenciamento de quadros estilo Kanban, com autenticação Google, organização por grupos e cards, e interface com suporte a drag and drop.',
         status: 'development',
@@ -42,6 +47,9 @@ const personalProjects: IPersonalProject[] = [
     {
         icon: 'widgets',
         link: 'https://test-next-shadcn-web.vercel.app/dashboard',
+        repositories: [
+            { link: 'https://github.com/DiguinhoLNS/test-next-shadcn-web' }
+        ],
         title: 'Shadcn',
         description: 'Aplicação de referência com shadcn/ui, reunindo dashboard com gráficos, CRUD de tarefas, galeria de componentes e troca de tema.',
         status: 'concluded',
@@ -49,7 +57,9 @@ const personalProjects: IPersonalProject[] = [
     },
     {
         icon: 'savings',
-        repository: 'https://github.com/DiguinhoLNS/quem-me-deve-app-v2',
+        repositories: [
+            { link: 'https://github.com/DiguinhoLNS/quem-me-deve-app-v2' }
+        ],
         title: 'Quem me Deve Mobile',
         description: 'Aplicativo simples para acompanhar cobranças pessoais no dia a dia, com uso offline e geração de pagamento via Pix.',
         status: 'concluded',
@@ -57,7 +67,9 @@ const personalProjects: IPersonalProject[] = [
     },
     {
         icon: 'screen_search_desktop',
-        repository: 'https://github.com/DiguinhoLNS/TCC',
+        repositories: [
+            { link: 'https://github.com/DiguinhoLNS/TCC' }
+        ],
         title: 'Achados e Perdidos Empresarial',
         description: 'Uma plataforma para facilitar a forma com que as empresas administram seus achados e perdidos.',
         status: 'concluded',

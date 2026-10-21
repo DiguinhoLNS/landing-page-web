@@ -1,13 +1,7 @@
-export interface IHomeSection {
-    id: string
-    /** Rótulo direto, pelo conteúdo da seção — não um guarda-chuva vago. */
-    label: string
-    icon: string
-    /** Aparece na nav compacta do mobile. */
-    compact?: boolean
-}
+import flags from '@/constants/flags'
+import type { IHomeSection } from '../interfaces/IHomeSection'
 
-const homeSections: IHomeSection[] = [
+const allHomeSections: IHomeSection[] = [
     {
         id: 'home-hero-section',
         label: 'Início',
@@ -16,44 +10,53 @@ const homeSections: IHomeSection[] = [
     },
     {
         id: 'home-jobs-section',
+        flag: 'jobs',
         label: 'Experiência',
         icon: 'work_history',
         compact: true
     },
     {
         id: 'home-stack-section',
+        flag: 'stack',
         label: 'Stack',
         icon: 'stacks'
     },
     {
         id: 'home-contributions-section',
+        flag: 'contributions',
         label: 'Contribuições',
         icon: 'deployed_code'
     },
     {
         id: 'home-products-section',
+        flag: 'products',
         label: 'Produtos',
         icon: 'apps',
         compact: true
     },
     {
         id: 'home-projects-section',
+        flag: 'projects',
         label: 'Projetos',
         icon: 'code_blocks',
         compact: true
     },
     {
         id: 'home-setup-section',
+        flag: 'setup',
         label: 'Setup',
         icon: 'desktop_windows'
     },
     {
         id: 'home-contact-section',
+        flag: 'contact',
         label: 'Contato',
         icon: 'alternate_email',
         compact: true
     }
 ]
+
+const homeSections = allHomeSections.filter(section => !section.flag || flags.sections[section.flag])
 
 export const homeSectionIds = homeSections.map(section => section.id)
 

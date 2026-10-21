@@ -8,7 +8,7 @@ const projectId = process.env.NEXT_PUBLIC_CLARITY_ID
 
 export default function AppClarity() {
 
-    const status = useCookieConsentStore(state => state.status)
+    const { status } = useCookieConsentStore()
 
     useEffect(() => {
         if (!projectId) return

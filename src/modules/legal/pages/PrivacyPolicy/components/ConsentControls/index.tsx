@@ -1,27 +1,19 @@
 'use client'
 
 import clsx from 'clsx'
-import Button from '@/components/common/Button'
 import Chip from '@/components/common/Chip'
+import Button from '@/components/common/Button'
 import useIsClient from '@/hooks/useIsClient'
-import useCookieConsentStore, { type TCookieConsentStatus } from '@/stores/cookieConsent'
-
-const statusChip: Record<TCookieConsentStatus, { label: string, variant: 'default' | 'success' | 'error' }> = {
-    pending: { label: 'Sem resposta', variant: 'default' },
-    granted: { label: 'Aceitos', variant: 'success' },
-    denied: { label: 'Recusados', variant: 'error' }
-}
+import { consentStatusLabel, consentStatusVariant } from '@/modules/legal/constants/consentStatus'
+import useCookieConsentStore from '@/stores/cookieConsent'
 
 export default function PrivacyPolicyConsentControls() {
 
     const isClient = useIsClient()
 
-    const status = useCookieConsentStore(state => state.status)
-    const updatedAt = useCookieConsentStore(state => state.updatedAt)
-    const grant = useCookieConsentStore(state => state.grant)
-    const deny = useCookieConsentStore(state => state.deny)
+    const { status, updatedAt, grant, deny } = useCookieConsentStore()
 
-    const chip = statusChip[isClient ? status : 'pending']
+    const chipStatus = isClient ? status : 'pending'
 
     return(
 
@@ -39,7 +31,10 @@ export default function PrivacyPolicyConsentControls() {
                             Cookies de análise
                         </p>
 
-                        <Chip label={chip.label} variant={chip.variant} />
+                        <Chip
+                            label={consentStatusLabel[chipStatus]}
+                            variant={consentStatusVariant[chipStatus]}
+                        />
                     </div>
 
                     <p className={clsx('text-footnote text-onSurfaceVariant')}>

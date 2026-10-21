@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import Button from '@/components/common/Button'
 import Icon from '@/components/common/Icon'
+import Button from '@/components/common/Button'
 import useIsClient from '@/hooks/useIsClient'
 import { COOKIES_SECTION_ID, PRIVACY_POLICY_PATH } from '@/modules/legal/constants/routes'
 import useCookieConsentStore from '@/stores/cookieConsent'
@@ -15,9 +15,7 @@ export default function CookieBanner() {
     const isClient = useIsClient()
     const reducedMotion = useReducedMotion()
 
-    const status = useCookieConsentStore(state => state.status)
-    const grant = useCookieConsentStore(state => state.grant)
-    const deny = useCookieConsentStore(state => state.deny)
+    const { status, grant, deny } = useCookieConsentStore()
 
     const visible = isClient && status === 'pending'
 

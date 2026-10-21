@@ -6,12 +6,18 @@ import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/common/Icon'
 import Button from '@/components/common/Button'
 import Section from '@/components/page/Section'
+import flags from '@/constants/flags'
+import homeSections from '@/modules/home/constants/sections'
 import springs, { crossFade } from '@/utils/motion/springs'
 import scrollToView from '@/utils/scrollToView'
+
+const nextSection = homeSections[1]
 
 export default function HomeHero() {
 
     const reducedMotion = useReducedMotion()
+
+    const hasActions = flags.sections.contact || flags.sections.projects
 
     const enter = (delay: number) => ({
         initial: reducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 },
@@ -39,23 +45,25 @@ export default function HomeHero() {
                     )}
                 >
                     <div className={clsx('flex flex-col items-start gap-8 order-1')}>
-                        <motion.div {...enter(0)}>
-                            <div
-                                className={clsx(
-                                    'flex items-center gap-2.5 h-8 pl-3 pr-4 rounded-full',
-                                    'material-control'
-                                )}
-                            >
-                                <span className={clsx('relative flex size-2')}>
-                                    <span className={clsx('absolute inline-flex size-full rounded-full bg-primary opacity-60 animate-ping')} />
-                                    <span className={clsx('relative inline-flex size-2 rounded-full bg-primary')} />
-                                </span>
+                        {flags.heroAvailability && (
+                            <motion.div {...enter(0)}>
+                                <div
+                                    className={clsx(
+                                        'flex items-center gap-2.5 h-8 pl-3 pr-4 rounded-full',
+                                        'material-control'
+                                    )}
+                                >
+                                    <span className={clsx('relative flex size-2')}>
+                                        <span className={clsx('absolute inline-flex size-full rounded-full bg-primary opacity-60 animate-ping')} />
+                                        <span className={clsx('relative inline-flex size-2 rounded-full bg-primary')} />
+                                    </span>
 
-                                <span className={clsx('text-caption vibrant-secondary')}>
-                                    Disponível para novos projetos
-                                </span>
-                            </div>
-                        </motion.div>
+                                    <span className={clsx('text-caption vibrant-secondary')}>
+                                        Disponível para novos projetos
+                                    </span>
+                                </div>
+                            </motion.div>
+                        )}
 
                         <motion.div {...enter(0.06)} className={clsx('flex items-center gap-4 w-full')}>
                             <div
@@ -94,30 +102,36 @@ export default function HomeHero() {
                             Transformo ideias em produtos digitais escaláveis com funcionalidades e interfaces que impressionam.
                         </motion.p>
 
-                        <motion.div
-                            {...enter(0.18)}
-                            className={clsx('flex flex-col gap-3 w-full', 'sm:flex-row sm:w-auto')}
-                        >
-                            <Button
-                                buttonMode='contained'
-                                buttonSize='lg'
-                                label='Fale comigo'
-                                iconName='arrow_outward'
-                                iconPosition='right'
-                                fullWidth={false}
-                                className={clsx('w-full', 'sm:w-auto')}
-                                onClick={() => scrollToView('home-contact-section')}
-                            />
+                        {hasActions && (
+                            <motion.div
+                                {...enter(0.18)}
+                                className={clsx('flex flex-col gap-3 w-full', 'sm:flex-row sm:w-auto')}
+                            >
+                                {flags.sections.contact && (
+                                    <Button
+                                        buttonMode='contained'
+                                        buttonSize='lg'
+                                        label='Fale comigo'
+                                        iconName='arrow_outward'
+                                        iconPosition='right'
+                                        fullWidth={false}
+                                        className={clsx('w-full', 'sm:w-auto')}
+                                        onClick={() => scrollToView('home-contact-section')}
+                                    />
+                                )}
 
-                            <Button
-                                buttonMode='glass'
-                                buttonSize='lg'
-                                label='Ver projetos'
-                                fullWidth={false}
-                                className={clsx('w-full', 'sm:w-auto')}
-                                onClick={() => scrollToView('home-projects-section')}
-                            />
-                        </motion.div>
+                                {flags.sections.projects && (
+                                    <Button
+                                        buttonMode='glass'
+                                        buttonSize='lg'
+                                        label='Ver projetos'
+                                        fullWidth={false}
+                                        className={clsx('w-full', 'sm:w-auto')}
+                                        onClick={() => scrollToView('home-projects-section')}
+                                    />
+                                )}
+                            </motion.div>
+                        )}
                     </div>
 
                     <motion.div
@@ -153,25 +167,27 @@ export default function HomeHero() {
                     </motion.div>
                 </div>
 
-                <motion.button
-                    type='button'
-                    aria-label='Ir para a experiência'
-                    className={clsx(
-                        'absolute inset-x-0 bottom-6 z-10',
-                        'hidden flex-col items-center gap-1 mx-auto w-fit cursor-pointer',
-                        'text-onSurfaceVariant hover:text-onSurface',
-                        'lg:flex'
-                    )}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ ...crossFade, delay: 0.5 }}
-                    whileHover={reducedMotion ? { opacity: 0.8 } : { y: 2 }}
-                    onClick={() => scrollToView('home-jobs-section')}
-                >
-                    <span className={clsx('text-caption uppercase')}>Role</span>
+                {!!nextSection && (
+                    <motion.button
+                        type='button'
+                        aria-label={`Ir para ${nextSection.label}`}
+                        className={clsx(
+                            'absolute inset-x-0 bottom-6 z-10',
+                            'hidden flex-col items-center gap-1 mx-auto w-fit cursor-pointer',
+                            'text-onSurfaceVariant hover:text-onSurface',
+                            'lg:flex'
+                        )}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ ...crossFade, delay: 0.5 }}
+                        whileHover={reducedMotion ? { opacity: 0.8 } : { y: 2 }}
+                        onClick={() => scrollToView(nextSection.id)}
+                    >
+                        <span className={clsx('text-caption uppercase')}>Role</span>
 
-                    <Icon iconName='keyboard_arrow_down' iconSize={20} />
-                </motion.button>
+                        <Icon iconName='keyboard_arrow_down' iconSize={20} />
+                    </motion.button>
+                )}
             </Section>
         </>
 

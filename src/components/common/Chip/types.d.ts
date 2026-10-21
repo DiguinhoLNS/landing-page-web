@@ -1,0 +1,1 @@
+export type TChipVariant = 'default' | 'success' | 'warning' | 'error'
