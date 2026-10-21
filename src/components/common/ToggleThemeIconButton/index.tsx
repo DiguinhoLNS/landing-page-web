@@ -1,21 +1,26 @@
 'use client'
 
 import { useTheme } from '@wrksz/themes/client'
+import themes, { themeIcon, themeLabel } from '@/constants/themes'
 import IconButton from '../IconButton'
+import type { TTheme } from '@/interfaces/TTheme'
 
 export default function ToggleThemeIconButton() {
 
-    const { theme, setTheme } = useTheme()
+    const { theme, setTheme } = useTheme<TTheme>()
+
+    const current = theme ?? themes[0]
 
     const toggleTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light')
+        setTheme(themes[(themes.indexOf(current) + 1) % themes.length])
     }
 
     return(
 
         <>
             <IconButton
-                iconName={theme === 'light' ? 'dark_mode' : 'light_mode'}
+                iconName={themeIcon[current]}
+                aria-label={`Tema: ${themeLabel[current]}`}
                 onClick={toggleTheme}
             />
         </>

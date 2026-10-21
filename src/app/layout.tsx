@@ -3,9 +3,12 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@wrksz/themes/next'
 import { Google_Sans, Roboto } from 'next/font/google'
-import AppClientProvider from '@/components/app/ClientProvider'
 import AppClarity from '@/components/app/Clarity'
+import AppFavicon from '@/components/app/Favicon'
 import CookieBanner from '@/components/app/CookieBanner'
+import PaletteProvider from '@/components/app/PaletteProvider'
+import AppClientProvider from '@/components/app/ClientProvider'
+import palettes from '@/constants/palettes'
 import 'material-symbols'
 import './globals.css'
 
@@ -40,19 +43,32 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             >
                 <body className={clsx('flex flex-1 flex-col w-full h-full')}>
                     <ThemeProvider
-                        attribute='data-theme'
-                        defaultTheme='dark'
+                        attribute='data-palette'
+                        storageKey='palette'
+                        themes={palettes}
+                        defaultTheme={palettes[0]}
+                        enableSystem={false}
+                        enableColorScheme={false}
                         disableTransitionOnChange
                     >
-                        <AppClientProvider>
-                            {children}
+                        <PaletteProvider>
+                            <ThemeProvider
+                                attribute='data-theme'
+                                defaultTheme='system'
+                                disableTransitionOnChange
+                            >
+                                <AppClientProvider>
+                                    {children}
 
-                            <CookieBanner />
+                                    <CookieBanner />
 
-                            <AppClarity />
-                            <Analytics />
-                            <SpeedInsights />
-                        </AppClientProvider>
+                                    <AppFavicon />
+                                    <AppClarity />
+                                    <Analytics />
+                                    <SpeedInsights />
+                                </AppClientProvider>
+                            </ThemeProvider>
+                        </PaletteProvider>
                     </ThemeProvider>
                 </body>
             </html> 
