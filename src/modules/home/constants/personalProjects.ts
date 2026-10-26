@@ -2,6 +2,17 @@ import type { IPersonalProject } from "../interfaces/IPersonalProject"
 
 const personalProjects: IPersonalProject[] = [
     {
+        icon: 'web',
+        repositories: [
+            { link: 'https://github.com/DiguinhoLNS/landing-page-web' }
+        ],
+        title: 'rodrigo.dev',
+        description: 'Este portfólio: página única com navegação por seções, troca de tema e paleta, animações e formulário de contato com envio de e-mail.',
+        status: 'concluded',
+        tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Resend'],
+        pinned: true
+    },
+    {
         icon: 'palette',
         title: 'Material You Components',
         description: 'Biblioteca de componentes React que replica o design system Material You.',
@@ -28,7 +39,8 @@ const personalProjects: IPersonalProject[] = [
         title: 'News Dashboard',
         description: 'Pipeline de notícias que extrai conteúdo de links, gera matérias com IA e publica automaticamente no WordPress, com dashboard para acompanhar e reprocessar os jobs.',
         status: 'concluded',
-        tags: ['Next.js', 'NestJS', 'PostgreSQL', 'BullMQ', 'Gemini', 'WordPress']
+        tags: ['Next.js', 'NestJS', 'PostgreSQL', 'BullMQ', 'Gemini', 'WordPress'],
+        pinned: true
     },
     {
         icon: 'savings',
