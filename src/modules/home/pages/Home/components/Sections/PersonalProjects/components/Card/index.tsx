@@ -1,10 +1,10 @@
 import clsx from 'clsx'
-import Button from '@/components/common/Button'
 import Chip from '@/components/common/Chip'
 import Icon from '@/components/common/Icon'
 import flags from '@/constants/flags'
-import { projectStatusLabel, projectStatusVariant } from '@/modules/home/constants/projectStatus'
+import Button from '@/components/common/Button'
 import type { IPersonalProject } from '@/modules/home/interfaces/IPersonalProject'
+import { projectStatusLabel, projectStatusVariant } from '@/modules/home/constants/projectStatus'
 
 type PersonalProjectCardProps = IPersonalProject
 
@@ -15,7 +15,8 @@ export default function PersonalProjectCard({
     title,
     description,
     status,
-    tags
+    tags,
+    pinned
 }: PersonalProjectCardProps) {
 
     const hasActions = flags.projectLinks && (!!link || repositories.length > 0)
@@ -39,10 +40,23 @@ export default function PersonalProjectCard({
                         />
                     </div>
 
-                    <Chip
-                        label={projectStatusLabel[status]}
-                        variant={projectStatusVariant[status]}
-                    />
+                    <div className={clsx('flex items-center gap-2')}>
+                        {pinned && (
+                            <span title='Fixado' className={clsx('flex')}>
+                                <Icon
+                                    iconName='keep'
+                                    iconSize={20}
+                                    iconColor={clsx('text-primary')}
+                                    className={clsx('[font-variation-settings:"FILL"_1]')}
+                                />
+                            </span>
+                        )}
+
+                        <Chip
+                            label={projectStatusLabel[status]}
+                            variant={projectStatusVariant[status]}
+                        />
+                    </div>
                 </div>
 
                 <div className={clsx('flex flex-1 flex-col gap-1.5')}>
