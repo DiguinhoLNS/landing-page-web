@@ -18,6 +18,12 @@ const styles = {
         iconBox: 'bg-company-hwm-variant/15',
         textColor: 'text-company-hwm-variant',
         accent: 'bg-company-hwm-variant'
+    },
+    tela: {
+        iconName: 'newspaper',
+        iconBox: 'bg-company-tela/15',
+        textColor: 'text-company-tela',
+        accent: 'bg-company-tela'
     }
 }
 
@@ -32,6 +38,7 @@ export default function JobCard({
     position,
     period,
     description,
+    variant = 'default',
     current
 }: JobCardProps) {
 
@@ -43,10 +50,7 @@ export default function JobCard({
 
         <>
             <motion.a
-                {...pressable}
-                href={link}
-                target='_blank'
-                rel='noreferrer'
+                {...(link && { ...pressable, href: link, target: '_blank', rel: 'noreferrer' })}
                 className={clsx(
                     'group relative',
                     'flex flex-col gap-5 w-full p-5 rounded-[1.25rem] overflow-hidden',
@@ -83,20 +87,25 @@ export default function JobCard({
                         </div>
                     </div>
 
-                    <Icon
-                        iconName='arrow_outward'
-                        iconSize={20}
-                        iconColor={clsx('text-onSurfaceVariant')}
-                        className={clsx(
-                            'shrink-0 transition-transform duration-200 ease-out',
-                            'group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
-                        )}
-                    />
+                    {!!link && (
+                        <Icon
+                            iconName='arrow_outward'
+                            iconSize={20}
+                            iconColor={clsx('text-onSurfaceVariant')}
+                            className={clsx(
+                                'shrink-0 transition-transform duration-200 ease-out',
+                                'group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
+                            )}
+                        />
+                    )}
                 </div>
 
                 <div className={clsx('flex items-center gap-2')}>
                     {!!current && (
-                        <span className={clsx('size-1.5 rounded-full bg-primary')} />
+                        <span className={clsx('relative flex size-1.5')}>
+                            <span className={clsx('absolute inline-flex size-full rounded-full bg-primary opacity-60 animate-ping')} />
+                            <span className={clsx('relative inline-flex size-1.5 rounded-full bg-primary')} />
+                        </span>
                     )}
 
                     <p className={clsx('text-caption text-onSurfaceVariant uppercase')}>
@@ -106,7 +115,10 @@ export default function JobCard({
 
                 <p
                     dangerouslySetInnerHTML={{ __html: description }}
-                    className={clsx('text-body text-onSurfaceVariant whitespace-pre-line')}
+                    className={clsx(
+                        'text-body text-onSurfaceVariant whitespace-pre-line',
+                        variant === 'new' && 'flex-1 content-center text-center italic'
+                    )}
                 />
             </motion.a>
         </>
