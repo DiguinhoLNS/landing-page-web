@@ -89,7 +89,7 @@ export default function HomeHero() {
                                 </p>
 
                                 <h1 className={clsx('text-display text-onSurface')}>
-                                    Rodr<span className={clsx('text-primary')}>igo</span>
+                                    Rodri<span className={clsx('text-primary')}>go</span>
                                 </h1>
                             </div>
                         </motion.div>

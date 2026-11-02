@@ -16,3 +16,11 @@ export const projectStatusVariant: Record<TProjectStatus, TChipVariant> = {
     private: 'default',
     archived: 'default'
 }
+
+export const projectStatusOrder: Record<TProjectStatus, number> = {
+    development: 0,
+    concluded: 1,
+    planned: 2,
+    private: 3,
+    archived: 4
+}

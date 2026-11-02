@@ -14,4 +14,5 @@ export interface IPersonalProject {
     description: string
     status: TProjectStatus
     tags: string[]
+    pinned?: boolean
 }

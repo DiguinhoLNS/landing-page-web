@@ -1,6 +1,6 @@
 import type { ICookieGroup } from '../interfaces/ICookieGroup'
 
-export const privacyPolicyUpdatedAt = '29 de setembro de 2026'
+export const privacyPolicyUpdatedAt = '23 de outubro de 2026'
 
 const cookieGroups: ICookieGroup[] = [
     {
@@ -15,6 +15,13 @@ const cookieGroups: ICookieGroup[] = [
                 storage: 'localStorage',
                 duration: 'Até ser apagado',
                 purpose: 'Lembrar se você prefere o tema claro ou escuro.'
+            },
+            {
+                name: 'palette',
+                provider: 'rodrigo.dev',
+                storage: 'localStorage',
+                duration: 'Até ser apagado',
+                purpose: 'Lembrar a paleta de cores que você escolheu.'
             },
             {
                 name: 'cookie-consent',

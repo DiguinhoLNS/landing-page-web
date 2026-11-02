@@ -3,9 +3,12 @@ import Reveal from '@/components/common/Reveal'
 import Section from '@/components/page/Section'
 import SectionTitle from '@/components/common/SectionTitle'
 import personalProjects from '@/modules/home/constants/personalProjects'
+import sortPersonalProjects from '@/modules/home/utils/sortPersonalProjects'
 import PersonalProjectCard from './components/Card'
 
 export default function HomePersonalProjects() {
+
+    const projects = sortPersonalProjects(personalProjects)
 
     return(
 
@@ -24,7 +27,7 @@ export default function HomePersonalProjects() {
                         'xl:grid-cols-3'
                     )}
                 >
-                    {personalProjects.map((item, index) => (
+                    {projects.map((item, index) => (
                         <Reveal
                             key={index}
                             delay={Math.min(index, 4) * 0.05}

@@ -118,7 +118,7 @@ export default function PrivacyPolicy() {
                         items={[
                             <><Strong>Dados que você envia</Strong> — nome, e-mail e mensagem, quando usa o formulário de contato.</>,
                             <><Strong>Dados de navegação</Strong> — páginas vistas, interações, tipo de dispositivo e navegador, coletados por ferramentas de análise.</>,
-                            <><Strong>Preferências</Strong> — tema e a sua escolha sobre cookies, guardados só no seu navegador.</>
+                            <><Strong>Preferências</Strong> — tema, paleta de cores e a sua escolha sobre cookies, guardados só no seu navegador.</>
                         ]}
                     />
 

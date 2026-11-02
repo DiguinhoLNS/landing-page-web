@@ -17,7 +17,7 @@ export default function AppClarity() {
     }, [])
 
     useEffect(() => {
-        if (!projectId || status === 'pending') return
+        if (!projectId) return
 
         const storage = status === 'granted' ? 'granted' : 'denied'
 
