@@ -4,7 +4,7 @@ const jobs: IJob[] = [
     {
         type: 'tela',
         title: 'Portal Tela',
-        link: 'https://www.portaltela.com',
+        link: 'https://www.2future.co/',
         position: 'Full-stack Software Engineer',
         period: 'NOV 2026 - Presente',
         description: 'Em breve, mais detalhes sobre os projetos e desafios por aqui!',
