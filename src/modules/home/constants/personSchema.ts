@@ -1,8 +1,24 @@
 import { authorImagePath, authorJobTitle, authorName, siteDescription, siteName, siteUrl } from '@/constants/site'
 import contacts from './contacts'
 import jobs from './jobs'
+import stack from './stack'
 
 const currentJob = jobs[0]
+
+const knowledgeGroups = ['Linguagens', 'Frameworks & Libs', 'Bancos de dados', 'Estilização']
+
+const knowsAbout = [
+    'Desenvolvimento Full-stack',
+    'Desenvolvimento Front-end',
+    'Desenvolvimento Back-end',
+    'Desenvolvimento Mobile',
+    'APIs REST',
+    'Design Systems',
+    'Arquitetura de software',
+    ...stack
+        .filter(group => knowledgeGroups.includes(group.title))
+        .flatMap(group => group.items.map(item => item.name))
+]
 
 const personSchema = {
     '@context': 'https://schema.org',
@@ -34,7 +50,7 @@ const personSchema = {
             url: siteUrl,
             image: `${siteUrl}${authorImagePath}`,
             nationality: { '@type': 'Country', name: 'Brasil' },
-            knowsAbout: ['React', 'Next.js', 'React Native', 'TypeScript', 'JavaScript', 'Design Systems', 'Expo'],
+            knowsAbout,
             ...(currentJob && {
                 worksFor: {
                     '@type': 'Organization',
