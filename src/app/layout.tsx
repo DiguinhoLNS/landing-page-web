@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import clsx from 'clsx'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -9,6 +10,7 @@ import CookieBanner from '@/components/app/CookieBanner'
 import PaletteProvider from '@/components/app/PaletteProvider'
 import AppClientProvider from '@/components/app/ClientProvider'
 import palettes from '@/constants/palettes'
+import { authorName, siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/constants/site'
 import 'material-symbols'
 import './globals.css'
 
@@ -28,8 +30,39 @@ const googleSans = Google_Sans({
     fallback: ['system-ui', 'sans-serif']
 })
 
-export const metadata = {
-    title: 'rodrigo.dev',
+export const metadata: Metadata = {
+    metadataBase: new URL(siteUrl),
+    title: {
+        default: siteTitle,
+        template: `%s — ${siteName}`
+    },
+    description: siteDescription,
+    keywords: siteKeywords,
+    applicationName: siteName,
+    authors: [{ name: authorName, url: siteUrl }],
+    creator: authorName,
+    alternates: {
+        canonical: '/'
+    },
+    openGraph: {
+        type: 'profile',
+        locale: 'pt_BR',
+        url: '/',
+        siteName,
+        title: siteTitle,
+        description: siteDescription,
+        firstName: 'Rodrigo',
+        lastName: 'Santos'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: siteTitle,
+        description: siteDescription
+    },
+    robots: {
+        index: true,
+        follow: true
+    }
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
